@@ -1,0 +1,25 @@
+.Login-component {
+    /* The image used */
+    background-image: url(../Dashboard/Inviktus.jpg);
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 535px;
+}
+.center-text {
+    
+}
+.select-video {
+    height: 500px;
+}
+  
+.select-video video {
+    width: 100%;
+    /* height: 450px; */
+    margin-top:78%;
+  }

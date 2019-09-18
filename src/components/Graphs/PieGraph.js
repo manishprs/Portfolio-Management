@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Alert, Row, Col } from 'react-bootstrap';
 import { Radio, Loader, Select } from 'semantic-ui-react';
 import { Chart } from 'react-google-charts';
-import moment from 'moment';
+// import moment from 'moment';
 import { connect } from 'react-redux';
 
 import * as actionCreators from '../../store/actions/actions';

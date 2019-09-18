@@ -1,0 +1,200 @@
+.App {
+  font-family: serif;
+}
+
+.pm-bread-crumb-icon {
+	background-color: white;
+	margin-top: 2%;
+}
+
+.pm-center-content {
+	margin-top: 1%;
+}
+
+.pm-graph-content {
+	max-width: 100%;
+	min-height: 100vh;
+	max-height: 100vh;
+}
+
+.pm-graph {
+	margin-top: 3%;
+}
+
+.pm-sidebar-icon:hover {
+	cursor: pointer;
+}
+
+.pm-search {
+	border: 0;
+  	outline: 0;
+  	background: transparent;
+	border-bottom: 1px solid #33567E;
+	border-radius: 0%;
+}
+
+.pm-search:focus {
+	/* border: 0;
+  	outline: 0;
+  	background: transparent;
+	border-bottom: 1px solid #33567E;
+	border-radius: 0%; */
+	background: transparent;
+	box-shadow: 0 0 0 0;
+}
+
+.pm-sidebar-items {
+	font-size: 1.1rem;
+	border-bottom: 0;
+	/* font-weight: bold; */
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.pm-sidebar-items:hover {
+	/* font-size: 1.2rem; */
+	cursor: pointer;
+	color: #3D6B85;
+}
+
+.left-sidebar-list-item {
+	padding: .75rem .25rem !important;
+}
+
+.list-item {
+	color: #33567E !important;
+	font-size: 0.9rem;
+	font-weight: lighter !important;
+	padding: 0.5rem 0rem 0.5rem 0.5rem !important;
+}
+
+.column-list-item {
+	color: #33567E !important;
+	font-size: 1rem;
+	padding: 1rem !important;
+	overflow-x: hidden; 
+}
+ 
+.list-item:hover {
+	cursor: pointer;
+	/* font-size: 1rem; */
+	font-weight: bolder !important;
+}
+
+.column-list-item:hover {
+	cursor: pointer;
+	/* font-size: 1.1rem; */
+	font-weight: bolder !important;
+}
+
+.active-item {
+  font-weight: bolder !important;
+}
+
+.column-active-item {
+	font-size: 1.1rem;
+	font-weight: bolder !important;
+	background-color: #f6f6f6 !important;
+}
+
+.pm-active-icon {
+	color: #6e162b;
+}
+
+.pm-table {
+	max-height: 80vh;
+	overflow-y: auto;
+	margin-top: 2%;
+}
+
+#my-scroll::-webkit-scrollbar-track
+{
+	/* -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); */
+	border-radius: 2px;
+	background-color: #e6eaec;
+}
+
+#my-scroll::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: white;
+}
+
+#my-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	/* -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0); */
+	background-color: #33567E;
+}
+
+#my-scroll:hover {
+	cursor: pointer;
+}
+
+/* 576px, 768px, 992px, and 1200px */
+
+@media	(min-width: 400px) and (max-width: 767px) {
+
+	.pm-left-sidebar {
+		width: 50% !important;
+	}
+
+	.pm-graph-content-container {
+		margin-left: 3% !important;
+		margin-right: 3% !important;
+	}
+
+	.pm-right-sidebar {
+		width: 40% !important;
+	}
+}
+
+@media	(min-width: 768px) and (max-width: 991px) {
+
+	.pm-left-sidebar {
+		width: 30% !important;
+	}
+
+	.pm-graph-content-container {
+		margin-left: 2% !important;
+		margin-right: 27% !important;
+	}
+
+	.pm-right-sidebar {
+		width: 25% !important;
+	}
+}
+
+@media	(min-width: 992px) and (max-width: 1199px) {
+
+	.pm-left-sidebar {
+		width: 23% !important;
+	}
+
+	.pm-graph-content-container {
+		margin-left: 25% !important;
+		margin-right: 22% !important;
+	}
+
+	.pm-right-sidebar {
+		width: 20% !important;
+	}
+}
+
+@media	(min-width: 1200px) {
+
+	.pm-left-sidebar {
+		width: 18% !important;
+	}
+	.pm-graph-content-container {
+		margin-left: 20% !important;
+		margin-right: 17% !important;
+	}
+	.pm-right-sidebar {
+		width: 15% !important;
+	}
+}
+/* This Css will increase the size of the Graph Content So it is placed here. This is important */
+.pm-graph-content-full-screen {
+	margin-left: 3% !important;
+}

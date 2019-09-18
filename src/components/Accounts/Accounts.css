@@ -1,0 +1,7 @@
+.accounts {
+   max-height: 40vh;
+   min-height: auto;
+   width: 100%;
+   overflow-y: auto;
+   overflow-x: hidden;
+}

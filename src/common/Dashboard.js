@@ -1,14 +1,21 @@
 import React from 'react';
 import '../assets/styles/dashboard.css';
-// import dasData from '../constants';
-import VideoPage from '../common/VideosPage';
-
+import { Carousel} from 'react-bootstrap'
+import local from '../constants/constant';
 
 const Dashboard = () =>(
-    <div className="Login-component">
-        <div className="center-text">
-        </div>
-        <VideoPage/>
+    <div>
+        <Carousel>
+            {local.images.map((e,i)=>(
+                <Carousel.Item>
+                <img
+                className="d-block w-100"
+                src={e}
+                alt="First slide"
+                />
+            </Carousel.Item>
+            ))}
+        </Carousel> 
     </div>
 );
 

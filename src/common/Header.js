@@ -19,6 +19,8 @@ const Header = () =>(
                 <Nav className="mr-auto"></Nav>
                 <Nav>
                 {/* <Nav.Link href="/">Home</Nav.Link> */}
+                <Nav.Link href="/adminLogin">AdminLogin</Nav.Link>
+                <Nav.Link href="/customerLogin">CustomerLogin</Nav.Link>
                 <Nav.Link href="/porfolio">Portfolio</Nav.Link>
                 </Nav>
         </Navbar.Collapse>

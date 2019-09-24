@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Header from '../common/Header';
 import Dashboard from '../common/Dashboard';
+import Layout from '../Layout';
+import VideoPage from '../common/VideosPage';
 
 class HomePage extends Component {
     render(){
         return(
-        <div>
-            <Header/>
+        <Layout>            
             <Dashboard/>
-        </div>
+            <VideoPage/>
+        </Layout>
         );
     }
 }

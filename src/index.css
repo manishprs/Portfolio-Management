@@ -12,3 +12,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Header */
+html, body{ height:100%; margin:0; }
+body {
+  display: flex;
+  flex-direction: column;
+}
+#root {
+  height: 100%;
+}
+.main-page {
+  height: 100%;
+  /* background-color: #529695; */
+}
+article { 
+  /* overflow-x: hidden;  */
+  /* overflow-y: scroll;  */
+  /* height: calc( 100% - 50px );  */
+}
+header {
+  background-color: lightcyan;
+  height: 50px;
+}
+article {
+  height: calc(100 - 100px);
+}
+/* End Header */
+/* Footer */
+footer {
+  background-color: #5a9f9a;
+  /* height: 50px; */
+}
+

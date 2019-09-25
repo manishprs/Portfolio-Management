@@ -43,5 +43,6 @@ article {
 footer {
   background-color: #5a9f9a;
   /* height: 50px; */
+  padding-bottom: 10px;
 }
 

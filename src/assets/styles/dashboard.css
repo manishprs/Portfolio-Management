@@ -1,7 +1,20 @@
 .select-video video {
     width: 100%;
     border-radius: 4px;
+    padding-bottom: 20px;
     /* background-color: #529695; */
     /* height: 450px; */
     /* margin-top:78%; */
+  }
+  .dummy{
+    min-height: 550px;
+    
+  }
+  .d-block{
+    padding : 0.5em 10px 0 10px;
+    border-radius: 4px;
+  }
+  .comingsoon{
+    text-align: center;
+    padding : 19% 0 0 0;
   }

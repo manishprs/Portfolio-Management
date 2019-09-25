@@ -7,7 +7,7 @@ const Dashboard = () =>(
     <div>
         <Carousel>
             {local.images.map((e,i)=>(
-                <Carousel.Item>
+                <Carousel.Item key={i}>
                 <img
                 className="d-block w-100"
                 src={e}

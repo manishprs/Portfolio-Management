@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 import logo from '../../assets/invictusLogo.svg';
 
@@ -46,6 +46,14 @@ const header = props => {
             { sidebarLeft }          
             { sidebarRight }
          </Navbar.Brand>
+         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto"></Nav>
+                <Nav>
+                <Nav.Link href="/">Home</Nav.Link>
+                {/* <Nav.Link href="/xy">Portfolio</Nav.Link> */}
+                </Nav>
+        </Navbar.Collapse>
       </Navbar>
    );
 }

@@ -34,7 +34,7 @@ const header = props => {
    
    return (
       <Navbar expand="lg" style={{ backgroundColor: '#E7E9F1' }}>
-         <Navbar.Brand href="#">
+         <Navbar.Brand href="/">
             <img
                alt="Invictus Analytics"
                src={ logo }
@@ -50,7 +50,7 @@ const header = props => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto"></Nav>
                 <Nav>
-                <Nav.Link href="/">Home</Nav.Link>
+                {/* <Nav.Link href="/">Home</Nav.Link> */}
                 {/* <Nav.Link href="/xy">Portfolio</Nav.Link> */}
                 </Nav>
         </Navbar.Collapse>

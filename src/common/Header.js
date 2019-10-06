@@ -4,7 +4,7 @@ import logo from '../assets/invictusLogo.svg';
 
 const Header = () =>(
     <Navbar expand="lg" style={{ backgroundColor: '#E7E9F1' }}>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
         <img
             alt="Invictus Analytics"
             src={ logo }
@@ -19,8 +19,8 @@ const Header = () =>(
                 <Nav className="mr-auto"></Nav>
                 <Nav>
                 {/* <Nav.Link href="/">Home</Nav.Link> */}
-                <Nav.Link href="/adminLogin">AdminLogin</Nav.Link>
-                <Nav.Link href="/customerLogin">CustomerLogin</Nav.Link>
+                <Nav.Link href="/adminLogin">Admin</Nav.Link>
+                <Nav.Link href="/customerLogin">Customer</Nav.Link>
                 <Nav.Link href="/porfolio">Portfolio</Nav.Link>
                 </Nav>
         </Navbar.Collapse>

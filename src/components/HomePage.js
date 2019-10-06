@@ -33,9 +33,13 @@ class HomePage extends Component {
     render(){
         return(
         <Layout>            
-            <Dashboard/>
+            <Dashboard 
+                mouseOverEvent = {this.handleMouseEvent}
+                reference = {this.videoPlay}
+                mouseOutEvent = {this.handleMouseOutEvent}
+            />
             <div className="dummy">
-                <h1 className="comingsoon">We will be coming soon</h1>
+                <h1 className="comingsoon"><p>Please Contact<br/>Shoven Shrivastava <br/>@617-583-3126 <br/>for Demo.</p></h1>
             </div>
             <VideoPage 
                 mouseOverEvent = {this.handleMouseEvent}

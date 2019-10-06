@@ -1,5 +1,6 @@
 import React from 'react';
 import videourl from '../assets/videos/inviktus.mp4';
+import videoImg from '../assets/videos/videoBanner.png';
 
 const VideosPage = (props) => (
   <div className="col-md-12">
@@ -9,6 +10,7 @@ const VideosPage = (props) => (
           controls src={videourl} 
           alt='demo video' 
           preload= "true"
+          poster={videoImg}
           onMouseOver={()=>props.mouseOverEvent()}
           onMouseOut={()=>props.mouseOutEvent()}
           ref={props.reference} />

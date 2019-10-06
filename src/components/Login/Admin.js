@@ -1,9 +1,12 @@
 import React from 'react';
-import ComingSoon from '../../assets/comingsoon.jpg';
+import ComingSoon from '../../assets/Dashboard/Inviktus.jpg';
 import Layout from '../../Layout';
 
 const Admin = ()=>(
-    <Layout>   
+    <Layout>
+        <div>
+            <h1 className="demoMessage"><p>Please Contact<br/>Shoven Shrivastava <br/>@617-583-3126 <br/>for Demo.</p></h1>
+        </div>   
         <img
             alt="Invictus Analytics"
             src={ ComingSoon }

@@ -8,9 +8,9 @@ class Footer extends React.Component {
       <div className="row">
 				<div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
 					<p><u>
-            <Link to="#">© Your Company</Link>
+            <Link className="c-name" to="#">Copyright © 2019 | inviktus.io</Link>
             </u></p>
-					<p className="h6">&copy All right Reversed.<Link className="text-green ml-2" to="https://www.invictus.io" target="_blank">Invictus</Link></p>
+					<p className="h6">All Rights Reserved</p>
 				</div>
 				<hr/>
 			</div>
@@ -20,4 +20,3 @@ class Footer extends React.Component {
 }
 
 export default (Footer);
-// export default withStyles(s)(Footer);

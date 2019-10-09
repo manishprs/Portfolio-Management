@@ -11,7 +11,7 @@ var data = {
             img:img3,
             caption:{
                 smallHeader:'Introducing',
-                boldHeader: 'Invictus',
+                boldHeader: 'Inviktus',
                 text1:'An AI and Blockchain based\nMiddle office Solution for Investement Industry',
                 text2:'we are unique fintech company which offers service as well as develop products',
                 class: 'firstSlide',
@@ -21,8 +21,8 @@ var data = {
         {
             img:bigdata,
             caption:{
-                smallHeader:'',
-                boldHeader: 'Finalcial & Analytic Eintein cloud',
+                smallHeader:'Financial & Analytics',
+                boldHeader: 'Einstein Cloud',
                 text1:'Inviktus uses latest Big Data Technologies to provided Cloud Based low cost platform',
                 text2:'',
                 class: 'secondSlide',

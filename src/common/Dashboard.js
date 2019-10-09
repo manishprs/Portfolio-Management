@@ -18,6 +18,7 @@ const Dashboard = () =>(
                         alt='demo video' 
                         preload= "true"
                         poster={videoImg2}
+                        height="500"
                         />
                     </div>
                     </div>
@@ -29,6 +30,7 @@ const Dashboard = () =>(
                   className="d-block w-100"
                   src={e.img}
                   alt={e.caption.alt}
+                  height="500"
                 />
                 <Carousel.Caption className={e.caption.class}>
                   <span>{e.caption.smallHeader?e.caption.smallHeader:''}</span>

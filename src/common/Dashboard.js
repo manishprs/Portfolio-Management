@@ -33,7 +33,7 @@ const Dashboard = () =>(
                   height="500"
                 />
                 <Carousel.Caption className={e.caption.class}>
-                  <span>{e.caption.smallHeader?e.caption.smallHeader:''}</span>
+                  <span>{e.caption.smallHeader?e.caption.smallHeader:''}</span><br/>
                   <span>{e.caption.boldHeader?e.caption.boldHeader:''}</span>
                   <p>{e.caption.text1?e.caption.text1:''}</p>
                   <p>{e.caption.text2?e.caption.text2:''}</p>

@@ -55,7 +55,7 @@ body{
   font-size: 50px;
   font-style: normal;
 }
-.firstSlide span:nth-child(2){
+.firstSlide span:nth-child(3){
   color:rgb(0, 122, 255);
   box-sizing: border-box;
   display: inline-block;
@@ -81,7 +81,7 @@ body{
   font-size: 50px;
   font-style: normal;
 }
-.secondSlide span:nth-child(2){
+.secondSlide span:nth-child(3){
   color:rgb(255, 255, 255);
   box-sizing: border-box;
   display: inline-block;
@@ -110,7 +110,7 @@ body{
   background-color: rgba(237, 245, 253, 0.5);
   border-radius: 4px;
 }
-.thirdSlide span:nth-child(2){
+.thirdSlide span:nth-child(3){
   color:rgb(0, 122, 255);
   box-sizing: border-box;
   display: inline-block;
@@ -141,7 +141,7 @@ body{
   font-size: 50px;
   font-style: normal;
 }
-.fourthSlide span:nth-child(2){
+.fourthSlide span:nth-child(3){
   color:rgb(255, 255, 255);
   box-sizing: border-box;
   display: inline-block;

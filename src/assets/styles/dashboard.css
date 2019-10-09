@@ -32,7 +32,7 @@
   .carousel-caption {
     position: absolute;
     right: 0%;
-    bottom: 30%;
+    bottom: 18%;
     left: 12%;
     z-index: 10;
     padding-top: 20px;
@@ -52,7 +52,7 @@ body{
   box-sizing: border-box;
   display: inline-block;
   font-family: "Open Sans";
-  font-size: 57px;
+  font-size: 50px;
   font-style: normal;
 }
 .firstSlide span:nth-child(2){
@@ -60,7 +60,7 @@ body{
   box-sizing: border-box;
   display: inline-block;
   font-family: "Josefin Sans";
-  font-size: 57px;
+  font-size: 50px;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 10px;
@@ -73,13 +73,22 @@ body{
   font-style: normal; 
   font-size: 20px;
 }
+.secondSlide span:first-child{
+  color:rgb(255, 255, 255);
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: "Open Sans";
+  font-size: 50px;
+  font-style: normal;
+}
 .secondSlide span:nth-child(2){
   color:rgb(255, 255, 255);
   box-sizing: border-box;
   display: inline-block;
   font-family: "Open Sans";
-  font-size: 40px;
+  font-size: 50px;
   font-style: normal;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 .secondSlide p{
@@ -96,7 +105,7 @@ body{
   box-sizing: border-box;
   display: inline-block;
   font-family: "Open Sans";
-  font-size: 57px;
+  font-size: 50px;
   font-style: normal;
   background-color: rgba(237, 245, 253, 0.5);
   border-radius: 4px;
@@ -106,7 +115,7 @@ body{
   box-sizing: border-box;
   display: inline-block;
   font-family: "Josefin Sans";
-  font-size: 57px;
+  font-size: 50px;
   font-style: normal;
   font-weight: 700;
   background-color: rgba(237, 245, 253, 0.5);
@@ -129,7 +138,7 @@ body{
   box-sizing: border-box;
   display: inline-block;
   font-family: "Open Sans";
-  font-size: 57px;
+  font-size: 50px;
   font-style: normal;
 }
 .fourthSlide span:nth-child(2){
@@ -137,7 +146,7 @@ body{
   box-sizing: border-box;
   display: inline-block;
   font-family: "Josefin Sans";
-  font-size: 57px;
+  font-size: 50px;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 10px;

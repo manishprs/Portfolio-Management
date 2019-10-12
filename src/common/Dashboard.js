@@ -8,17 +8,19 @@ import videoImg2 from '../assets/videos/videoBanner2.png';
 
 const Dashboard = () =>(
     <div>
-        <Carousel>
+        <Carousel indicators={false}>
             <Carousel.Item key='video'>
                 <div className="col-md-12">
                     <div className="select-video">
                     <div>
                         <video 
-                        controls src={videourl} 
+                        controls 
+                        src={videourl} 
                         alt='demo video' 
                         preload= "true"
                         poster={videoImg2}
                         height="500"
+                        
                         />
                     </div>
                     </div>

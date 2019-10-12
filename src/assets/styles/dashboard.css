@@ -16,7 +16,11 @@
   }
   .comingsoon{
     text-align: center;
-    padding : 19% 0 0 0;
+    padding : 4% 0 0 0;
+  }
+  .dummy h4:nth-child(1) {
+    text-align: justify;
+    padding: 10% 10% 0 10%;
   }
   .demoMessage{
     position: absolute;
@@ -25,10 +29,7 @@
     margin-left: 10%;
     margin-top: 15% !important;
   }
-  .demoMessage h1:first-child{
-    
-  }
-
+  
   .carousel-caption {
     position: absolute;
     right: 0%;

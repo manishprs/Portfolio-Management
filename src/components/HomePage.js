@@ -39,7 +39,8 @@ class HomePage extends Component {
                 mouseOutEvent = {this.handleMouseOutEvent}
             />
             <div className="dummy">
-                <h1 className="comingsoon"><p>Please Contact<br/>Shoven Shrivastava <br/>@617-583-3126 <br/>for Demo.</p></h1>
+                <h4>Inviktus is Big Data, AI and Blockchain based Middle and Front Office Solution for Investment Industry. Inviktus is Cloud based low cost solution for Data Processing, Reporting and Distribution platform. Inviktus provides platform for Portfolio Analytics, Client Reporting, Report Distribution platform.</h4>
+                <h4 className="comingsoon"><p>Please Contact<br/>Shoven Shrivastava <br/>@617-583-3126 <br/>for Demo.</p></h4>
             </div>
             <VideoPage 
                 mouseOverEvent = {this.handleMouseEvent}

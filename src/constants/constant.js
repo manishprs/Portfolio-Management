@@ -21,10 +21,10 @@ var data = {
         {
             img:bigdata,
             caption:{
-                smallHeader:'Financial & Analytics',
-                boldHeader: 'Einstein Cloud',
-                text1:'Inviktus uses latest Big Data Technologies to provided Cloud Based low cost platform',
-                text2:'',
+                smallHeader:'',
+                boldHeader: 'Inviktus',
+                text1:'uses latest Big Data Technologies to provided Cloud Based low cost platform.',
+                text2:'Inviktus uses AI for portfolio Commentary and Portfolio Sentiment Analysis..',
                 class: 'secondSlide',
                 alt:'',
             }

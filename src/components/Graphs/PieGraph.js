@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Alert, Row, Col } from 'react-bootstrap';
+import { Container, Alert, Row, Col, Form } from 'react-bootstrap';
 import { Radio, Loader, Select } from 'semantic-ui-react';
 import { Chart } from 'react-google-charts';
 // import moment from 'moment';
@@ -71,19 +71,19 @@ class PieGraph extends Component {
       });
    }
 
-   manageActiveColumnHandler = (event, data) => {
+   manageActiveColumnHandler = event => {
       
       this.setState({
-         activeColumn: data.value
+         activeColumn: event.target.value
       });
    }
 
-   manageActiveReportPeriodHandler = (event, data) => {
+   manageActiveReportPeriodHandler = event => {
       this.props.resetState({
          graphData: [],
       });
       this.setState({
-         activePieReportPeriod: data.value
+         activePieReportPeriod: event.target.value
       });
    }
 
@@ -91,8 +91,12 @@ class PieGraph extends Component {
 
       let periodMarkup = null, reportPeriod;
 
+      // const columns = this.props.columns.map(current => {
+      //    return { key: current, value: current, text: current }
+      // });
+
       const columns = this.props.columns.map(current => {
-         return { key: current, value: current, text: current }
+         return <option value={current}>{current}</option>
       });
 
       if(this.props.reportType === 'attr') {
@@ -100,20 +104,33 @@ class PieGraph extends Component {
          reportPeriod = (this.props.reportPeriod[this.props.account] !== undefined ? this.props.reportPeriod[this.props.account] : []);
          if(reportPeriod.length > 0) {
 
+            // const periods = reportPeriod.map(current => {
+            //    return { key:current, value: current, text: current };
+            // });
+
             const periods = reportPeriod.map(current => {
-               return { key:current, value: current, text: current };
+               return <option value={current}>{current}</option>;
             });
 
             periodMarkup = (
                <PMContainer>
-                  Report Period:
-                  <Select
+                  
+                  {/* <Select
                      placeholder="Select Period"
                      value={ this.state.activePieReportPeriod }
                      options={ periods }
                      onChange={ this.manageActiveReportPeriodHandler.bind(null) }
                      style={{ marginLeft: '1%' }}
-                  />
+                  /> */}
+                  <Form.Group>
+                     <Form.Control 
+                        as="select" 
+                        value={ this.state.activePieReportPeriod }
+                        onChange={ this.manageActiveReportPeriodHandler.bind(null) }
+                     >
+                        {periods}
+                     </Form.Control>
+                  </Form.Group>
                </PMContainer>
             );
          }
@@ -136,20 +153,30 @@ class PieGraph extends Component {
       const selectLevel = (
          <Container fluid={true}>
             <Row>
-               <Col xs={5} sm={2}>
+               <Col sm={4} md={3} lg={3} xs={2}>
                   {levels}
                </Col>               
-               <Col xs={7} sm={4}>
-                  Attributes:
-                  <Select
+               <Col sm={4} md={4} lg={5} xs={5}>
+                  
+                  {/* <Select
                      placeholder="Select Column"
                      value={ this.state.activeColumn }
                      options={ columns }
                      onChange={ this.manageActiveColumnHandler.bind(null) }
-                     style={{ marginLeft: '1%' }}
-                  />
+                     style={{ marginLeft: '2%' }}
+                  /> */}
+
+                  <Form.Group>
+                     <Form.Control 
+                        as="select"
+                        value={ this.state.activeColumn }
+                        onChange={ this.manageActiveColumnHandler.bind(null) }
+                     >
+                        {columns}
+                     </Form.Control>
+                  </Form.Group>
                </Col>
-               <Col xs={8} sm={4}>
+               <Col sm={4} md={4} lg={4} xs={5}>
                   {periodMarkup}
                </Col>
             </Row>
@@ -184,13 +211,12 @@ class PieGraph extends Component {
          )
       }
       else {
-
          let chart = null;
          if(this.props.graphData.length > 1 && !this.props.isLoading) {
             chart = (
                <Chart
-                  width={'800px'}
-                  height={'400px'}
+                  // width='800px'
+                  height='400px'
                   chartType="PieChart"
                   data={ this.props.graphData }
                   options={{

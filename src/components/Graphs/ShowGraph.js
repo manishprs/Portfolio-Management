@@ -1,5 +1,6 @@
 import React from 'react';
 
+import AccountsGraph from './AccountsGraph';
 import LineGraph from './LineGraph';
 import BarGraph from './BarGraph';
 import PieGraph from './PieGraph';
@@ -11,6 +12,15 @@ const showGraph = (props) => {
 
    let graph = null;
    switch(props.activeGraph) {
+
+      case 'accounts':
+         graph = <AccountsGraph 
+            accounts = { props.accounts }
+            activeAccount = { props.activeAccount }
+            click = { accountId => props.onAccountClick(accountId) }
+         />
+         break;
+
       case 'line': 
          graph = <LineGraph 
             data={props.data}

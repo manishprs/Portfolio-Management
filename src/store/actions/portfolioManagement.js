@@ -25,9 +25,11 @@ export const fetchAccounts = () => {
                     let keys = Object.keys(response.data);
                     let details;
                     keys.forEach(account => {
+                        if(!account.toLowerCase().includes('manulife balanced')) return;
                         accounts.push(account);
                         details = response.data[account];
                         reportTypes[account] = details.dataTypes.map(type => {
+                            
                             if(type === 'Portfolio Attribution')
                                 reportPeriod[account] = details['reportPeriods'];
                             return { id: helper.getReportTypeID(type), name: type };

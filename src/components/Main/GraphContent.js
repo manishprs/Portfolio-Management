@@ -25,6 +25,19 @@ const graphContent = props => {
    if(props.activeLevel.level !== "0")
       sections.push({ key: 'Level', content: props.activeLevel.id, link: false, active: false });
 
+   let graphTypes = null;
+   if(props.activeAccount !== '' && props.activeReportType !== '') {
+      graphTypes = (
+         <PMContainer>
+            <GraphTypes 
+               graphs={ props.graphs }
+               click={ props.manageActiveGraph }
+               activeGraph={ props.activeGraph }
+            />
+         </PMContainer>
+      );
+   }
+
    let graphContainer = null;
    if(props.isLoading) {
       graphContainer = (
@@ -46,7 +59,9 @@ const graphContent = props => {
       graphContainer = (
          <ShowGraph 
             data={ props.data }
-            activeGraph={ props.activeGraph } 
+            accounts = { props.accounts }
+            onAccountClick = { props.onAccountClick }
+            activeGraph={ ((props.activeAccount === '' || props.activeReportType === '') ? 'accounts' : props.activeGraph) } 
             activeReportType={ props.activeReportType }
             activeAccount={ props.activeAccount }
             activeColumns={ props.activeColumns }
@@ -77,13 +92,7 @@ const graphContent = props => {
             </Row>
          </Container>
          <Segment className="pm-graph-content">
-            <PMContainer>
-               <GraphTypes 
-                  graphs={ props.graphs }
-                  click={ props.manageActiveGraph }
-                  activeGraph={ props.activeGraph }
-               />
-            </PMContainer> 
+            { graphTypes }
             <Container fluid={true} className="pm-graph">
                { graphContainer }
             </Container>

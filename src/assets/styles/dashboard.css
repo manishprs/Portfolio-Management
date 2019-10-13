@@ -18,7 +18,7 @@
     text-align: center;
     padding : 4% 0 0 0;
   }
-  .dummy h4:nth-child(1) {
+  .dummy h3:nth-child(1) {
     text-align: justify;
     padding: 10% 10% 0 10%;
   }

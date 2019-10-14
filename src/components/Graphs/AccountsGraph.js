@@ -1,14 +1,11 @@
 import React from 'react';
 import { Container, Alert } from 'react-bootstrap';
 import { Chart } from 'react-google-charts';
-import MyIcons from '../../hoc/MyIcons';
-
-import logo from '../../assets/accounts.svg';
 
 const accountsGraph = (props) => {
 
     const data = props.accounts.map(account => {
-        return [account, (Math.random() * 50)]
+        return [account, (props.total[account] !== undefined ? props.total[account] : 0)]
     });
 
     data.unshift(['Account', 'Total']);
@@ -32,6 +29,7 @@ const accountsGraph = (props) => {
                 chartType="PieChart"
                 data={ data }
                 options={{
+                    sliceVisibilityThreshold: 0.00,
                     slices: {
                       [index]: { offset: 0.2 },
                     },
@@ -58,10 +56,6 @@ const accountsGraph = (props) => {
 
    return (
         <Container>
-            {/* <div>
-                <img src={logo} alt="" style={{ width: '5%', height: '4%', marginRight: '2%' }} />
-                <span style={{ fontSize: 'large' }}>Accounts</span>
-            </div> */}
             <h1 style={{ color: '#33567E' }}>Accounts</h1>
             { graphData }
         </Container>

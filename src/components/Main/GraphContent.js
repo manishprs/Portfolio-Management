@@ -60,6 +60,7 @@ const graphContent = props => {
          <ShowGraph 
             data={ props.data }
             accounts = { props.accounts }
+            accountTotal = { props.accountTotal }
             onAccountClick = { props.onAccountClick }
             activeGraph={ ((props.activeAccount === '' || props.activeReportType === '') ? 'accounts' : props.activeGraph) } 
             activeReportType={ props.activeReportType }

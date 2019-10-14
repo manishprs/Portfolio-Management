@@ -16,6 +16,7 @@ const showGraph = (props) => {
       case 'accounts':
          graph = <AccountsGraph 
             accounts = { props.accounts }
+            total = { props.accountTotal }
             activeAccount = { props.activeAccount }
             click = { accountId => props.onAccountClick(accountId) }
          />

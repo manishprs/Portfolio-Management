@@ -116,8 +116,6 @@ class PortfolioManagement extends PureComponent{
 
    manageActiveAccountHandler = accountId => {
 
-      console.log('account id', accountId);
-
       const reportPeriod = (this.props.reportPeriod[accountId] !== undefined ? this.props.reportPeriod[accountId] : []);
       let activeReportPeriod = '';
       if(reportPeriod.length > 0)
@@ -273,6 +271,7 @@ class PortfolioManagement extends PureComponent{
                         graphs={ this.props.graphs }
                         manageActiveGraph={ this.manageActiveGraphHandler }
                         accounts={ this.props.accounts }
+                        accountTotal={ this.props.accountTotal }
                         onAccountClick={ this.manageActiveAccountHandler }
                         data={ this.props.graphData }
                         activeGraph={ this.props.activeGraph }
@@ -304,6 +303,7 @@ const mapStateToProps = state => {
       graphs: state.pm.graphs,
       templates: state.pm.templates,
       accounts: state.pm.accounts,
+      accountTotal: state.pm.accountTotal,
       reportPeriod: state.pm.reportPeriod,
       columns: state.pm.columns,
       levelOneList: state.pm.levelOneList,

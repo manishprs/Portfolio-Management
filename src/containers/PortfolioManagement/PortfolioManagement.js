@@ -276,6 +276,7 @@ class PortfolioManagement extends PureComponent{
                         data={ this.props.graphData }
                         activeGraph={ this.props.activeGraph }
                         activeReportType={ this.props.activeReportType }
+                        onReportTypeClick={ (type) => this.props.manageActiveReportType(type) }
                         activeAccount={ this.props.activeAccount }
                         activeColumns={ this.props.activeColumns } 
                         activeLevel={ this.props.activeLevel }
@@ -284,7 +285,8 @@ class PortfolioManagement extends PureComponent{
                         activeReportPeriod={ this.props.activeReportPeriod }
                         manageActiveReportPeriod={ this.manageActiveReportPeriodHandler }
                         endDate={ this.state.endDate }
-                        isLoading={ (this.props.isAccountLoading || this.props.isGraphDataLoading) }
+                        isLoading={ this.props.isGraphDataLoading }
+                        isAccountLoading={ this.props.isAccountLoading }
                         toggleFullScreen={ this.toggleFullScreen }
                         toggleFSIcon={ toggleFSIcon }
                         screenWidth={ this.state.screenWidth }

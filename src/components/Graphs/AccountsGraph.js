@@ -25,7 +25,7 @@ const accountsGraph = (props) => {
         graphData = (
             <Chart
                 // width='800px'
-                height='400px' 
+                height='200px' 
                 chartType="PieChart"
                 data={ data }
                 options={{

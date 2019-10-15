@@ -51,20 +51,20 @@ class SideBarContent extends PureComponent {
          activeKey = 'report-types'
       }
 
-      reportTypeMarkup = null;
-      if(this.props.activeAccount !== '') {
-         reportTypeMarkup = (
-            /* Report Types */
-            <ReportTypes 
-               account={ this.props.activeAccount }
-               reportTypes={ this.props.reportTypes } 
-               click={ this.props.onReportTypeClick }
-               active={ this.props.activeReportType }
-               isOpen={ activeKey === 'report-types' }
-               openHandler={ type => this.openHandler(type) }
-            />
-         );
-      }
+      // reportTypeMarkup = null;
+      // if(this.props.activeAccount !== '') {
+      //    reportTypeMarkup = (
+      //       /* Report Types */
+      //       <ReportTypes 
+      //          account={ this.props.activeAccount }
+      //          reportTypes={ this.props.reportTypes } 
+      //          click={ this.props.onReportTypeClick }
+      //          active={ this.props.activeReportType }
+      //          isOpen={ activeKey === 'report-types' }
+      //          openHandler={ type => this.openHandler(type) }
+      //       />
+      //    );
+      // }
 
       filterMarkup = null;
       if(this.props.activeReportType !== '') {
@@ -111,7 +111,7 @@ class SideBarContent extends PureComponent {
             <ListGroup variant="flush">
                <Accordion activeKey={ activeKey }>
                   {/* Accounts */}
-                  <Accounts 
+                  {/* <Accounts 
                      accounts={ this.props.accounts } 
                      click={ this.props.onAccountClick } 
                      active={ this.props.activeAccount }
@@ -120,8 +120,8 @@ class SideBarContent extends PureComponent {
                      searchValue={ this.state.searchValue }
                      searchHandler={ event => this.manageSearchHandler(event) }
                      isLoading={ this.props.isAccountLoading }
-                  />
-                  { reportTypeMarkup }
+                  /> */}
+                  {/* { reportTypeMarkup } */}
                   { filterMarkup }
                   { subFilterMarkup }
                   {/* Listing Templates */}

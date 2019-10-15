@@ -11,6 +11,10 @@
 	margin-top: 1%;
 }
 
+.pm-hide {
+	display: none;
+}
+
 .pm-graph-content {
 	max-width: 100%;
 	min-height: 100vh;

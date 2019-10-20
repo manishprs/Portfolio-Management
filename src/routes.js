@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import HomePage from './components/HomePage';
+import HomePage from './components/HomePage2';
 import PortfolioManagement from './containers/PortfolioManagement/PortfolioManagement';
 import AdminLogin from './components/Login/Admin';
 import CustomerLogin from './components/Login/Customer';
@@ -11,6 +11,5 @@ export default (
         <Route path="/porfolio" component={PortfolioManagement} />
         <Route path="/adminLogin" component={AdminLogin} />
         <Route path="/customerLogin" component={CustomerLogin} />
-
     </Route>  
 );

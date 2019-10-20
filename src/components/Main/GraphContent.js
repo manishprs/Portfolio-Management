@@ -4,6 +4,7 @@ import { Breadcrumb, Loader, Segment, Button, Icon } from 'semantic-ui-react';
 import GraphTypes from '../Graphs/GraphTypes';
 import ShowGraph from '../Graphs/ShowGraph';
 import PMContainer from '../../hoc/PMContainer';
+import Dashboard from '../Graphs/Dashboard';
 
 import '../../containers/App.css';
 
@@ -25,9 +26,9 @@ const graphContent = props => {
    if(props.activeLevel.level !== "0")
       sections.push({ key: 'Level', content: props.activeLevel.id, link: false, active: false });
 
-   let graphTypes = null;
-   if(props.activeAccount !== '' && props.activeReportType !== '') {
-      graphTypes = (
+   // let graphTypes = null;
+   // if(props.activeAccount !== '' && props.activeReportType !== '') {
+      const graphTypes = (
          <PMContainer>
             <GraphTypes 
                graphs={ props.graphs }
@@ -35,6 +36,27 @@ const graphContent = props => {
                activeGraph={ props.activeGraph }
             />
          </PMContainer>
+      );
+   // }
+
+   let accountsContainer = null;
+   if(props.isAccountLoading) {
+      accountsContainer = (
+         <Loader active>
+            Preparing Graph
+         </Loader>
+      );
+   }
+   else {
+      accountsContainer = (
+         <ShowGraph 
+            data={ props.data }
+            accounts = { props.accounts }
+            accountTotal = { props.accountTotal }
+            onAccountClick = { props.onAccountClick }
+            activeGraph={ 'accounts' } 
+            activeAccount={ props.activeAccount }
+         />
       );
    }
 
@@ -56,12 +78,11 @@ const graphContent = props => {
       );
    }
    else {
+
       graphContainer = (
          <ShowGraph 
             data={ props.data }
-            accounts = { props.accounts }
-            onAccountClick = { props.onAccountClick }
-            activeGraph={ ((props.activeAccount === '' || props.activeReportType === '') ? 'accounts' : props.activeGraph) } 
+            activeGraph={ props.activeGraph } 
             activeReportType={ props.activeReportType }
             activeAccount={ props.activeAccount }
             activeColumns={ props.activeColumns }
@@ -73,11 +94,20 @@ const graphContent = props => {
       );
    }
 
-   const fsMarkup = ( props.screenWidth < 992 ? 'none' : 'block');
+   // const fsMarkup = ( props.screenWidth < 992 ? 'none' : 'block');
+
+   let className = '';
+   let accountsContainerWidth = 8;
+   let dashboardContainerWidth = 4;
+   if(props.activeAccount === '') {
+      className = "pm-hide";
+      accountsContainerWidth = 12;
+      dashboardContainerWidth = 0;
+   }
 
    return (
       <PMContainer>
-         <Container className="pm-bread-crumb-icon">
+         {/* <Container className="pm-bread-crumb-icon">
             <Row>
                <Col xs={11} sm={11} md={11} lg={11}>
                   <Breadcrumb icon='right angle' sections={sections} style={{ backgroundColor: '#ffffff', fontSize: '0.9rem'}} />
@@ -90,13 +120,43 @@ const graphContent = props => {
                   </Button>
                </Col>
             </Row>
-         </Container>
-         <Segment className="pm-graph-content">
-            { graphTypes }
+         </Container> */}
+         <Container className="pm-graph-content" style={{ marginTop: '2%', maxHeight: '200vh' }}>
+            <div>
+               <Row>
+                  <Col sm={ accountsContainerWidth }>
+                     <Segment style={{ minHeight: '40vh', height: '40vh' }}>
+                        { accountsContainer }
+                     </Segment>
+                  </Col>
+                  <Col sm={ dashboardContainerWidth } className={ className }>
+                     <Segment style={{ minHeight: '40vh', height: '40vh' }}>
+                        <Dashboard
+                           reportTypes={ props.reportTypes }
+                           activeReportType={ props.activeReportType }
+                           click={ props.onReportTypeClick }
+                        />
+                     </Segment>
+                  </Col>
+               </Row>
+            </div>
+            <div style={{ marginTop: '2%' }}>
+               <Row>
+                  <Col sm={12}>
+                     <Segment style={{ minHeight: '60vh' }}>
+                        { graphTypes }
+                        <Container fluid={true} className="pm-graph">
+                           { graphContainer }
+                        </Container>
+                     </Segment>
+                  </Col>
+               </Row>
+            </div>
+            {/* { graphTypes }
             <Container fluid={true} className="pm-graph">
                { graphContainer }
-            </Container>
-         </Segment>
+            </Container> */}
+         </Container>
       </PMContainer>         
    );
 }

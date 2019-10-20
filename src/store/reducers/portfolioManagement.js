@@ -18,6 +18,7 @@ const initialState = {
         { id: 3, name: 'Template 3' },
     ],
     accounts: [],
+    accountTotal: {},
     reportTypes: {},
     columns: [],
     levelOneList: [],

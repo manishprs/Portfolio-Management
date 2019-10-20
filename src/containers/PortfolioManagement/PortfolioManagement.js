@@ -116,8 +116,6 @@ class PortfolioManagement extends PureComponent{
 
    manageActiveAccountHandler = accountId => {
 
-      console.log('account id', accountId);
-
       const reportPeriod = (this.props.reportPeriod[accountId] !== undefined ? this.props.reportPeriod[accountId] : []);
       let activeReportPeriod = '';
       if(reportPeriod.length > 0)
@@ -275,10 +273,12 @@ class PortfolioManagement extends PureComponent{
                         graphs={ this.props.graphs }
                         manageActiveGraph={ this.manageActiveGraphHandler }
                         accounts={ this.props.accounts }
+                        accountTotal={ this.props.accountTotal }
                         onAccountClick={ this.manageActiveAccountHandler }
                         data={ this.props.graphData }
                         activeGraph={ this.props.activeGraph }
                         activeReportType={ this.props.activeReportType }
+                        onReportTypeClick={ (type) => this.props.manageActiveReportType(type) }
                         activeAccount={ this.props.activeAccount }
                         activeColumns={ this.props.activeColumns } 
                         activeLevel={ this.props.activeLevel }
@@ -287,7 +287,8 @@ class PortfolioManagement extends PureComponent{
                         activeReportPeriod={ this.props.activeReportPeriod }
                         manageActiveReportPeriod={ this.manageActiveReportPeriodHandler }
                         endDate={ this.state.endDate }
-                        isLoading={ (this.props.isAccountLoading || this.props.isGraphDataLoading) }
+                        isLoading={ this.props.isGraphDataLoading }
+                        isAccountLoading={ this.props.isAccountLoading }
                         toggleFullScreen={ this.toggleFullScreen }
                         toggleFSIcon={ toggleFSIcon }
                         screenWidth={ this.state.screenWidth }
@@ -306,6 +307,7 @@ const mapStateToProps = state => {
       graphs: state.pm.graphs,
       templates: state.pm.templates,
       accounts: state.pm.accounts,
+      accountTotal: state.pm.accountTotal,
       reportPeriod: state.pm.reportPeriod,
       columns: state.pm.columns,
       levelOneList: state.pm.levelOneList,

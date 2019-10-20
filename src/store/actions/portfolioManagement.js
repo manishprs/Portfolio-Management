@@ -13,34 +13,78 @@ export const fetchAccounts = () => {
 
     return dispatch => {
        
+        const attribute = 'wgt_avg_mkt_cap'; 
         const URL = '/portfolio?route=padl/clist&format=json';
+        const totalURL = `equity?route=padl/l0ts&datatype=chars&from=2019-04-01&to=2019-05-01&account_name=ACCOUNT_NAME&fields=${attribute}&format=json`;
         const accounts = [];
         const reportTypes = {};
         const reportPeriod = {};
+        const accountTotal = {};
+        const accountTotalAPICalls = [];
         axios.get(URL)
             .then(response => {
                console.log('COMMON API RESPONSE REDUX', response);
                if(response !== null && response.status === 200 && response.data !== null) {
-                       
+                    
                     let keys = Object.keys(response.data);
                     let details;
                     keys.forEach(account => {
                         if(!account.toLowerCase().includes('manulife balanced')) return;
+
                         accounts.push(account);
                         details = response.data[account];
+                        let hasChars = false;
                         reportTypes[account] = details.dataTypes.map(type => {
                             
+                            if(type === 'Portfolio Characteristics') hasChars = true;
+
                             if(type === 'Portfolio Attribution')
                                 reportPeriod[account] = details['reportPeriods'];
                             return { id: helper.getReportTypeID(type), name: type };
                         });
-                    });      
-                    dispatch(saveAccounts({
-                        accounts,
-                        reportTypes,
-                        reportPeriod,
-                        isAccountLoading: false,
-                    }));               
+
+                        if(hasChars) {
+                            accountTotalAPICalls.push(axios.get(totalURL.replace('ACCOUNT_NAME', account)));
+                        }
+                    });
+                    Promise.all(accountTotalAPICalls)
+                        .then(response => {
+
+                            for(const currentAccountReponse of response) {
+        
+                                if(currentAccountReponse !== null && currentAccountReponse.status === 200 && currentAccountReponse.data !== null) {
+
+                                    let currentAccountArray = Object.keys(currentAccountReponse.data);
+                                    if(currentAccountArray.length > 0 && currentAccountReponse.data[currentAccountArray[0]] !== null && currentAccountReponse.data[currentAccountArray[0]] !== undefined) {
+
+                                        let currentTotal = 0;
+                                        for(const currentAccountValue of currentAccountReponse.data[currentAccountArray[0]]) {
+                                            if(isNaN(Number(currentAccountValue[attribute]))) continue;
+                                            currentTotal += Number(currentAccountValue[attribute]);
+                                        }    
+                                        accountTotal[currentAccountArray[0]] = currentTotal;                   
+                                    }
+                                }                            
+                            }
+                            
+                            dispatch(saveAccounts({
+                                accounts,
+                                accountTotal,
+                                reportTypes,
+                                reportPeriod,
+                                isAccountLoading: false,
+                            }));  
+                        })
+                        .catch(error => {
+                            console.log('[REDUX, fetchAccounts, totalAPI]', error);
+                            dispatch(saveAccounts({
+                                accounts,
+                                accountTotal,
+                                reportTypes,
+                                reportPeriod,
+                                isAccountLoading: false,
+                            })); 
+                        });          
                }
                else{
                     console.log('[REDUX, fetchAccounts]', response);
@@ -384,8 +428,6 @@ export const fetchGraphData = parameters => {
                                     } else {
                                         graphData.push({name: current['as_of_date'], [currentColumn]: Number(current[currentColumn])});
                                     }
-
-                                    console.log(graphData);
                                 }                              
                                 break;
                             

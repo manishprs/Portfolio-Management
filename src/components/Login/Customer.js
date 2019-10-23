@@ -1,6 +1,7 @@
 import React from 'react';
 import ComingSoon from '../../assets/Dashboard/Inviktus.jpg';
-import Layout from '../../Layout';
+// import Layout from '../../Layout';
+import Layout from '../../LayoutNew';
 
 const Customer = ()=>(
     <Layout>

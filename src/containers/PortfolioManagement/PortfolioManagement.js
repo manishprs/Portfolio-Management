@@ -220,11 +220,13 @@ class PortfolioManagement extends PureComponent{
       const toggleFSIcon = (this.state.sidebarOpen ? 'expand' : 'compress');
       return (
          <PMContainer>
+            <header>
             <Header 
                sideClick={ this.toggleSideBarHandler }
                rightClick = { this.toggleRightBarHandler }
                screenWidth = { this.state.screenWidth }
             />
+            </header>
             <Sidebar.Pushable>
                <Sidebar 
                   as={ Menu } 

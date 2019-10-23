@@ -2,7 +2,8 @@ import React from 'react';
 import { Icon } from 'semantic-ui-react';
 import { Navbar, Nav } from 'react-bootstrap';
 
-import logo from '../../assets/invictusLogo.svg';
+// import logo from '../../assets/invictusLogo.svg';
+import logo from '../../assets/Logo.svg';
 
 const header = props => {
 
@@ -33,13 +34,13 @@ const header = props => {
    }
    
    return (
-      <Navbar expand="lg" style={{ backgroundColor: '#E7E9F1' }}>
+      <Navbar expand="lg" style={{ backgroundColor: '#ffffff',height:'100%' }}>
          <Navbar.Brand href="/">
             <img
                alt="Invictus Analytics"
                src={ logo }
                width="auto"
-               height="35"
+               height="55"
                className="d-inline-block align-top"
                style={{ marginLeft: '20%' }}
             />  
@@ -50,8 +51,9 @@ const header = props => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto"></Nav>
                 <Nav>
-                {/* <Nav.Link href="/">Home</Nav.Link> */}
-                {/* <Nav.Link href="/xy">Portfolio</Nav.Link> */}
+                <Nav.Link href="/adminLogin">Admin</Nav.Link>
+                <Nav.Link href="/customerLogin">Customer</Nav.Link>
+                <Nav.Link href="/porfolio">Portfolio</Nav.Link>
                 </Nav>
         </Navbar.Collapse>
       </Navbar>

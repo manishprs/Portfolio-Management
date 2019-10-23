@@ -13,7 +13,7 @@ const IntroVideo = (props) =>(
             <p className="vidSubText">
             <ReadMoreReact 
                 text={props.local.AboutUs.text}
-                readMoreText='Lear more >'
+                readMoreText='Learn more >'
             />
             </p>
         </div>

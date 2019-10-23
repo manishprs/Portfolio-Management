@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import ReadMoreReact from 'read-more-react';
 
 const ourTeam = (props) =>(
     <div className="ourTeam">
@@ -19,7 +20,10 @@ const ourTeam = (props) =>(
                 <div className="perContent">
                     <div className="perName">{e.name}</div>
                     <hr className="hrname"/>
-                    <p className="perDescription">{e.perDesc}</p>
+                    <p className="perDescription">
+                        <ReadMoreReact text={e.perDesc}
+                            readMoreText='Read more'/>
+                    </p>
                 </div>
                 </div>
             </div>              

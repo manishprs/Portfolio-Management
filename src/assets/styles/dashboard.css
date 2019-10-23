@@ -411,8 +411,9 @@ figure{
   position: absolute;
   top: 12%;
   overflow-wrap: break-word;
-  margin-left: 2%;
+  /* margin-left: 2%; */
   text-align: justify;
+  padding: 0% 3% 0% 3%;
 }
 .vidHeadingText{
   Color: White;
@@ -430,7 +431,14 @@ figure{
   Color: White;
   Font-Size: 18px;
   Font-Family: "Roboto Regular";
-  text-align: left;
+  /* text-align: left; */
+}
+.vidSubText > .display-text-group >.displayed-text>.read-more-button{
+  Color: White;
+  Font-Family:  "Roboto Regular";
+  Font-Size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .videoDivOverlay{
   position: absolute;
@@ -512,9 +520,15 @@ figure{
 }
 /* //#0077ed style={{ color: '#777' }}*/
 .fa-user-circle{
-  color: #0077ed
+  color: #1d54a2;
 }
-
+.read-more-button{
+  Color: #1d54a2;
+  Font-Family:  "Roboto Regular";
+  Font-Size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 /* Team Member Css ends */
 

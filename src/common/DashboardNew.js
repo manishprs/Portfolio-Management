@@ -15,7 +15,7 @@ const Dashboard = () =>(
                   height="500"
                 />
                 <Carousel.Caption className={e.caption.class}>
-                  <p className="carHeading">{e.caption.smallHeader?e.caption.smallHeader:''}</p>
+                  <p className="carHeading">{e.caption.smallHeader?e.caption.smallHeader:''}</p><br/>
                   <p className="carSubHeading">{e.caption.boldHeader?e.caption.boldHeader:''}</p>
                   <p className="carSubText">{e.caption.text1?e.caption.text1:''}</p>
                   <p className="carSubText">{e.caption.text2?e.caption.text2:''}</p>

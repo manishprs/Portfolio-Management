@@ -19,11 +19,11 @@ const Header = (props) =>(
                 <Nav className="mr-auto"></Nav>
                 <Nav>
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="#" onClick={()=> props.scrollToAboutUs()}>AboutUs</Nav.Link>
+                <Nav.Link href="#" onClick={()=> props.scrollToAboutUs()}>About</Nav.Link>
                 <Nav.Link href="/porfolio">Portfolio</Nav.Link>
                 <Nav.Link href="/adminLogin">Admin</Nav.Link>
                 <Nav.Link href="/customerLogin">Customer</Nav.Link>
-                <Nav.Link href="#" onClick={()=>props.scrollToContact()}>ContactUs</Nav.Link>
+                <Nav.Link href="#" onClick={()=>props.scrollToContact()}>Contact</Nav.Link>
                 </Nav>
         </Navbar.Collapse>
       </Navbar>

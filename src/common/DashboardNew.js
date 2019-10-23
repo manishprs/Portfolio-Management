@@ -6,23 +6,6 @@ import local from '../constants/constant';
 const Dashboard = () =>(
     <div>
         <Carousel indicators={false}>
-            {/* <Carousel.Item key='video'>
-                <div className="col-md-12">
-                    <div className="select-video">
-                    <div>
-                        <video 
-                        controls 
-                        src={videourl} 
-                        alt='demo video' 
-                        preload= "true"
-                        poster={videoImg2}
-                        height="500"
-                        
-                        />
-                    </div>
-                    </div>
-                </div>
-            </Carousel.Item> */}
             {local.carouselItems.map((e,i)=>(
                 <Carousel.Item key={i}>
                 <img

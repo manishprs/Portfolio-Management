@@ -42,11 +42,7 @@ class HomePage extends Component {
     render(){
         return(
         <Layout>            
-            <Dashboard 
-                mouseOverEvent = {this.handleMouseEvent}
-                reference = {this.videoPlay}
-                mouseOutEvent = {this.handleMouseOutEvent}
-            />
+            <Dashboard/>
             <div className="container">
                 <IntoductionText
                 local={local}

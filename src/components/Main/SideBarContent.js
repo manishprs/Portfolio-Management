@@ -111,7 +111,7 @@ class SideBarContent extends PureComponent {
             <ListGroup variant="flush">
                <Accordion activeKey={ activeKey }>
                   {/* Accounts */}
-                  {/* <Accounts 
+                  <Accounts 
                      accounts={ this.props.accounts } 
                      click={ this.props.onAccountClick } 
                      active={ this.props.activeAccount }
@@ -120,7 +120,7 @@ class SideBarContent extends PureComponent {
                      searchValue={ this.state.searchValue }
                      searchHandler={ event => this.manageSearchHandler(event) }
                      isLoading={ this.props.isAccountLoading }
-                  /> */}
+                  />
                   {/* { reportTypeMarkup } */}
                   { filterMarkup }
                   { subFilterMarkup }

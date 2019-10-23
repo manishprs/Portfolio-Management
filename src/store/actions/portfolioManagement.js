@@ -29,7 +29,7 @@ export const fetchAccounts = () => {
                     let keys = Object.keys(response.data);
                     let details;
                     keys.forEach(account => {
-                        if(!account.toLowerCase().includes('manulife balanced')) return;
+                        if(!account.toLowerCase().includes('manulife')) return;
 
                         accounts.push(account);
                         details = response.data[account];

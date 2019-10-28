@@ -7,7 +7,7 @@ body,html {
   margin:0;
 }
 html * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Serif;
 }
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -19,6 +19,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Navigation color */
+
 #bodyContainer{
   background: #1d54a2;
   min-height: 9%;
@@ -64,3 +66,14 @@ footer {
   color: #9b9b9b !important;
 }
 /* Footer Ends */
+
+/* navigation css */
+
+.mr-auto, .mx-auto {
+  margin-right: none !important;
+  width: 39%;
+}
+.navbar-light .navbar-nav .nav-link{
+  color: #2a2a2a !important;
+  padding: 4%;
+}

@@ -16,7 +16,7 @@ const Header = (props) =>(
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto"></Nav>
+                <Nav className="mr-auto1"></Nav>
                 <Nav>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#" onClick={()=> props.scrollToAboutUs()}>About</Nav.Link>

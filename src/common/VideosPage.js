@@ -9,7 +9,6 @@ const VideosPage = (props) => (
           src={videourl} 
           alt='demo video' 
           preload= "true"
-          autoplay
           poster={transparent}
           onMouseOver={()=>props.mouseOverEvent()}
           onMouseOut={()=>props.mouseOutEvent()}

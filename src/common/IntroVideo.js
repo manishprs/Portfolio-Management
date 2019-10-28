@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoPage from '../common/VideosPage';
-import Analytics_Network from '../assets/Dashboard/Analytics_Network.jpg';
+import Analytics_Network from '../assets/videos/Video_BG.jpg';
 import ReadMoreReact from 'read-more-react';
 
 

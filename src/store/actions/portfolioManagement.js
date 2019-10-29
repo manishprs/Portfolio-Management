@@ -555,7 +555,7 @@ export const manageActiveLevel = parameters => {
         if(prevState.activeLevel.id !== id || prevState.activeLevel.level !== level)
             dispatch(saveActiveLevel({ level: level, id: id }))
         else if(prevState.activeLevel.id === id && prevState.activeLevel.level === level)
-            dispatch(saveActiveLevel({ level: 0, id: getState().pm.activeAccount }));
+            dispatch(saveActiveLevel({ level: "0", id: getState().pm.activeAccount }));
         else 
             dispatch(saveActiveLevel(prevState.activeLevel));
     }

@@ -253,11 +253,11 @@ export const fetchLevelOneList = parameters => {
                                 // do nothing
                                 break;
                         }
-                        dispatch(saveLevelOneList({
-                            levelOneList,
-                            isLevelOneLoading: false
-                        }));
-                    });                    
+                    });  
+                    dispatch(saveLevelOneList({
+                        levelOneList,
+                        isLevelOneLoading: false
+                    }));                  
                 }
                 else {
                     console.log('REDUX levelOneList', response);
@@ -319,11 +319,11 @@ export const fetchLevelTwoList = parameters => {
                                 // do nothing
                                 break;
                         }
-                        dispatch(saveLevelTwoList({
-                            levelTwoList,
-                            isLevelTwoLoading: false
-                        }));
-                    });                    
+                    });  
+                    dispatch(saveLevelTwoList({
+                        levelTwoList,
+                        isLevelTwoLoading: false
+                    }));                  
                 }
                 else {
                     console.log('REDUX levelTwoList', response);

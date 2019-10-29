@@ -1,9 +1,18 @@
 // import Invixtos from '../assets/Dashboard/Inviktus.jpg';
 // import img1 from '../assets/Dashboard/Analytics.jpg';
-import img2 from '../assets/Dashboard/Analytics_Network.jpg';
-import img3 from '../assets/Dashboard/Good_Analytics.jpg';
-import bigdata from '../assets/Dashboard/shutterstock_652084264.jpg';
-import mobile from '../assets/Dashboard/shutterstock_758444896.jpg';
+import img2 from '../assets/Dashboard/HeroBanner_5.jpg';
+import img3 from '../assets/Dashboard/HeroBanner_6.jpg';
+import bigdata from '../assets/Dashboard/HeroBanner_3.jpg';
+import mobile from '../assets/Dashboard/HeroBanner_4.jpg';
+// overlayImages
+import Blockchain from '../assets/Dashboard/icons/Blockchain Management.jpg';
+import Report from '../assets/Dashboard/icons/Reports & Anaylytics.jpg';
+import Portfolio from '../assets/Dashboard/icons/Portfolio_management.jpg';
+// icons
+import portfolio_icon from '../assets/Dashboard/icons/portfolio Management.svg';
+import Blockchain_icon from '../assets/Dashboard/icons/BlockChain.svg';
+import Report_icon from '../assets/Dashboard/icons/Reports and Analytics .svg';
+
 
 var data = {
     carouselItems : [
@@ -57,13 +66,35 @@ var data = {
             Ques:'Why Choose INVIKTUS',
             Intro : 'Inviktus is Big Data, AI and Blockchain based Middle and Front Office Solution for Investment Industry. Inviktus is Cloud based low cost solution for Data Processing, Reporting and Distribution platform. Inviktus provides platform for Portfolio Analytics, Client Reporting, Report Distribution platform.'
         },
+    ServicesOverlay:[
+        {
+            headingTitle:"Portfolio Management",
+            image:Portfolio,
+            iconImg:portfolio_icon,
+            content:"Business analytics (BA) is the practice of iterative, methodical exploration of an organization's data with emphasis on statistical analysis.",
+        },
+        {
+            headingTitle:"Block Chain",
+            image:Blockchain,
+            iconImg:Blockchain_icon,
+            content:"Business analytics (BA) is the practice of iterative, methodical exploration of an organization's data with emphasis on statistical analysis.",
+        },
+        {
+            headingTitle:"Report and Analytics",
+            image:Report,
+            iconImg:Report_icon,
+            content:"Business analytics (BA) is the practice of iterative, methodical exploration of an organization's data with emphasis on statistical analysis.",
+        },
+    ],
     AboutUs:{
         heading:'About INVIKTUS',
         text:'An AI and Blockchain based Middle office Solution for Investement Industry we are unique fintech company which offers service as well as develop products. We uses latest Big Data Technologies to provided Cloud Based low cost platform and AI for portfolio Commentary and Portfolio Sentiment Analysis. We brings Portfolio Performance and Risk Analytics to your phone.'
     },
     ContactUs:{
+        salutation:"We'd {icon} to help",
+        content:"We like to create things with fun, open-minded people. Feel free to say hello!",
         name:'Shoven Shrivastava',
-        addressLine1:'',
+        addressLine1:'Inviktus - Lynnfield, MA',
         addressLine2:'',
         contactNo:'@ 617-583-3126',
         email:'shoven@avilogicinc.com',
@@ -86,6 +117,7 @@ var data = {
             
         ]
     }
+
 };
 
 export default data;

@@ -8,15 +8,26 @@ class Layout extends React.Component {
     children: PropTypes.node.isRequired,
   };
 
+  scrollToAboutUs = () => {
+    var elmnt = document.getElementById("videoDiv");
+    elmnt.scrollIntoView();
+  }
+  scrollToContact = () => {
+    var elmnt = document.getElementById("getInTouch");
+    elmnt.scrollIntoView();
+  }
   render() {
     return (
       <div className='main-page'>
           <header>
-            <Header />
+            <Header
+            scrollToAboutUs = {this.scrollToAboutUs}
+            scrollToContact = {this.scrollToContact}
+            />
           </header>
-       <article>
+       {/* <article> */}
         {this.props.children}
-        </article>
+        {/* </article> */}
         <footer className="app-footer">
             <Footer />
         </footer>

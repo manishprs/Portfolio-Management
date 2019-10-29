@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import Dashboard from '../common/Dashboard';
 import Layout from '../Layout';
-import VideoPage from '../common/VideosPage';
+import '../assets/styles/dashboard.css';
+import IntoductionText from '../common/IntroComponent';
+import OverlayComponent from '../common/Overlay';
+import IntroVideo from '../common/IntroVideo';
+import OurTeam from '../common/ourTeam';
+import QueryForm from '../common/QueryForm';
+import local from '../constants/constant';
 
 class HomePage extends Component {
     constructor(props) {
@@ -30,23 +36,42 @@ class HomePage extends Component {
           console.log(err);
         }
     }
+    formSubmitHandler = (event) => {
+        event.preventDefault();
+    }
     render(){
         return(
         <Layout>            
-            <Dashboard 
-                mouseOverEvent = {this.handleMouseEvent}
-                reference = {this.videoPlay}
-                mouseOutEvent = {this.handleMouseOutEvent}
-            />
-            <div className="dummy">
-                <h2>Inviktus is Big Data, AI and Blockchain based Middle and Front Office Solution for Investment Industry. Inviktus is Cloud based low cost solution for Data Processing, Reporting and Distribution platform. Inviktus provides platform for Portfolio Analytics, Client Reporting, Report Distribution platform.</h2>
-                <h2 className="comingsoon"><p>Please Contact<br/>Shoven Shrivastava <br/>@617-583-3126 <br/>for Demo.</p></h2>
+            <Dashboard/>
+            <div className="container">
+                <IntoductionText
+                local={local}
+                />
+                <div className="row clearfix">
+                    {local.ServicesOverlay.map((data,index)=>(
+                        <OverlayComponent 
+                            data={data}
+                            key={index}
+                        />
+                    ))}
+                    
+                    {/* <OverlayComponent/>
+                    <OverlayComponent/> */}
+                </div>
+                <IntroVideo
+                    mouseOverEvent = {this.handleMouseEvent}
+                    reference = {this.videoPlay}
+                    mouseOutEvent = {this.handleMouseOutEvent}
+                    local={local}
+                />
+                <OurTeam
+                local={local}
+                />   
+                <QueryForm
+                onFormSubmit={this.formSubmitHandler}
+                local={local}
+                />          
             </div>
-            <VideoPage 
-                mouseOverEvent = {this.handleMouseEvent}
-                reference = {this.videoPlay}
-                mouseOutEvent = {this.handleMouseOutEvent}
-            />
         </Layout>
         );
     }

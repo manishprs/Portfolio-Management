@@ -1,17 +1,9 @@
-.select-video video {
-    width: 90%;
-    border-radius: 4px;
-    padding-bottom: 20px;
-    /* background-color: #529695; */
-    /* height: 450px; */
-    /* margin-top:78%; */
-  }
-  .d-block{
+.d-block{
     /* padding : 0.5em 10px 0 10px; */
     /* border-radius: 4px; */
-    opacity: 0.5;
-    background-color: rgba(0, 122, 255, 0.5);
-  }
+    opacity: 0.4;
+    /* background-color: rgba(0, 122, 255, 0.5); */
+}
 /* intro message starts */
   .dummy .whyHeader{
     font-family: "Roboto Medium";
@@ -54,6 +46,9 @@
     margin-left: 10%;
     margin-top: 15% !important;
   }
+  .carousel-item{
+    background-color: rgba(0, 122, 255, 0.6);
+  }
   
   .carousel-caption {
     position: absolute;
@@ -74,7 +69,7 @@
   left: 5%;
   z-index: 20;
   color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  /* text-shadow: 0 1px 2px rgba(0,0,0,.6); */
 }
 
 body{
@@ -270,15 +265,15 @@ figure{
 .overlay-img {
   border: 0;
 }
-.featured-service:hover .image-box .caption-box {
+/* .featured-service:hover .image-box .caption-box {
   bottom: -100%;
 }
 .featured-service:hover .overlay-box {
   bottom: 0px;
-}
-.icon-graphic::before {
-  content: "\e90c";
-}
+} */
+/* .icon-graphic::before {
+  content: "../Dashboard/icon/BlockChain.svg";
+} */
 .featured-service .image-box .caption-box {
   position: absolute;
   left: 0px;
@@ -343,7 +338,7 @@ figure{
   width: 100%;
 }
 [class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon' !important;
+  /* font-family: 'icomoon' !important; */
   /* speak: none; */
   font-style: normal;
   font-weight: normal;
@@ -369,7 +364,8 @@ figure{
   vertical-align: middle;
 }
 .featured-service .image-box .caption-box .title {
-  font-size: 20px;
+  font-size: 17px;
+  /* font-size: 20px; */
   color: #ffffff;
   line-height: 30px;
 }
@@ -397,22 +393,23 @@ figure{
 /* video Part  starts*/
 #videoDiv{
   position: relative;
-  background-color: rgb(80,135,188,0.70);
+  background-color: rgba(0, 122, 255, 0.6);
   margin-bottom: 10px;
 }
 
 .vidImagOverlay{
-  height: 400px;
+  height: 410px;
   width: 100%;
   opacity: 0.3;
   /* color: rgb(16,98,160,0.70); */
 }
 .overlayText{
   position: absolute;
-  top: 12%;
+  top: 9%;
   overflow-wrap: break-word;
-  margin-left: 2%;
+  /* margin-left: 2%; */
   text-align: justify;
+  padding: 0% 3% 0% 3%;
 }
 .vidHeadingText{
   Color: White;
@@ -430,12 +427,32 @@ figure{
   Color: White;
   Font-Size: 18px;
   Font-Family: "Roboto Regular";
-  text-align: left;
+  /* text-align: left; */
+}
+.vidSubText > .display-text-group >.displayed-text>.read-more-button{
+  Color: White;
+  Font-Family:  "Roboto Regular";
+  Font-Size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .videoDivOverlay{
   position: absolute;
   top: 10%;
   left: 42%;
+}
+.select-video video {
+  width: 90%;
+  border-radius: 4px;
+  /* padding-bottom: 20px; */
+  /* background-color: #529695; */
+  /* height: 450px; */
+  /* margin-top:78%; */
+  background:transparent url('../Dashboard/HeroBanner_5.jpg') no-repeat 0 0;
+   -webkit-background-size:cover;
+   -moz-background-size:cover;
+   -o-background-size:cover;
+   background-size:cover;
 }
 /* video part ends */
 
@@ -512,9 +529,18 @@ figure{
 }
 /* //#0077ed style={{ color: '#777' }}*/
 .fa-user-circle{
-  color: #0077ed
+  /* color: #1d54a2; */
 }
-
+.fa-user{
+  color: rgba(0, 113, 255, 0.8);
+}
+.read-more-button{
+  Color: #1d54a2;
+  Font-Family:  "Roboto Regular";
+  Font-Size: 11px;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 /* Team Member Css ends */
 
@@ -523,9 +549,13 @@ figure{
 #getInTouch{
   width: 100%;
   /* height: 760px; */
-  height: 400px;
-  background-color: #ececec;
+  height: 500px;
+  /* background-color: #414a51; */
+  background-color:rgb(65, 74, 81, 0.7) ;
   margin-bottom: 5%;
+}
+#getInTouch *{
+  color: white;
 }
 .getInToudhHeading{
   text-align: center;
@@ -536,15 +566,64 @@ figure{
 }
 .contactWrapper{
   /* float:left; */
-  padding: 4% 0 0 4%;
-  text-align: center;
+  padding: 2% 0 0 0%;
+  /* text-align: center; */
 }
 .contactHeading{
-  font-size: 38px;
+  font-size: 50px;
+  Font-Family:  "Roboto Medium";
+  margin:0;
+  line-height: 1.4285em;
+  text-align: center;
+}
+.hrContactFirst{
+  border-color: white;
+  /* border-width: 10px; */
+  width: 92%;
+  text-align: center;
+}
+.salutation{
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+}
+.contactContent{
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.4285em;
+  Font-Family:  "Roboto Regular";
+  margin-bottom: 3%;
+  text-align: center;
+}
+.customeRow{
+  text-align: center;
+  margin-left: 29%;
+  height: 185px;
+}
+.contactColumn {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  text-align: left;
+}
+
+.right{
+  text-align: left;
+}
+@media screen and (max-width: 450px) {
+  .customeRow{
+    margin-left: 0%;
+  }
+}
+.hrcontactLast{
+  border-color: white;
+  width: 38%;
+  text-align: center;
 }
 .contactName,.contactaddressLine1,.contactaddressLine2,.contactNumber,.contactEmail{
   Font-Family:  "Roboto Regular";
   font-size: 18px;
+  
 }
 .formWrapper{
   float:left;

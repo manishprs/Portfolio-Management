@@ -1,7 +1,7 @@
 .d-block{
     /* padding : 0.5em 10px 0 10px; */
     /* border-radius: 4px; */
-    opacity: 0.4;
+    /* opacity: 0.4; */
     /* background-color: rgba(0, 122, 255, 0.5); */
 }
 /* intro message starts */
@@ -47,7 +47,7 @@
     margin-top: 15% !important;
   }
   .carousel-item{
-    background-color: rgba(0, 122, 255, 0.6);
+    /* background-color: rgba(0, 122, 255, 0.6); */
   }
   
   .carousel-caption {
@@ -60,8 +60,12 @@
     padding-bottom: 20px;
     color: #fff;
     text-align: inherit;
-    width: 35%;
+    width: 40%;
     transform: translate3d(0px, 0px, 0px);
+    /* background-color:rgba(237, 245, 253, 0.2); */
+    /* background-color:rgba(0, 122, 255, 0.3); */
+    border-radius: 4px;
+    padding: 1%;
 }
 .carousel-content {
   position: absolute;
@@ -76,7 +80,18 @@ body{
   line-height: 1;
   letter-spacing: 0.02em;
 }
-
+.firstSlide{
+  background-color:rgba(237, 245, 253, 0.6);
+}
+.secondSlide{
+  background-color:rgba(0, 122, 255, 0.3);
+}
+.thirdSlide{
+  background-color:rgba(237, 245, 253, 0.7);
+}
+.fourthSlide{
+  background-color:rgba(0, 122, 255, 0.3);
+}
 /* .firstSlide span:first-child{ */
 .firstSlide .carHeading {  
   color:rgb(0, 122, 255);
@@ -438,11 +453,12 @@ figure{
 }
 .videoDivOverlay{
   position: absolute;
-  top: 10%;
-  left: 42%;
+  top: 9%;
+  left: 40%;
 }
 .select-video video {
-  width: 90%;
+  /* width: 90%; */
+  width: 99%;
   border-radius: 4px;
   /* padding-bottom: 20px; */
   /* background-color: #529695; */
@@ -610,6 +626,14 @@ figure{
 @media screen and (max-width: 450px) {
   .customeRow{
     margin-left: 0%;
+  }
+  .left{
+    display: none;
+  }
+  .videoDivOverlay {
+    top: 8%;
+    position: inherit;
+    left: 0;
   }
 }
 .hrcontactLast{

@@ -1,5 +1,6 @@
 import React from 'react';
-import videourl from '../assets/videos/inviktus.mp4';
+import videourl from '../assets/videos/inviktus_new.mp4';
+
 import transparent from '../assets/Dashboard/transparent.png';
 
 const VideosPage = (props) => (

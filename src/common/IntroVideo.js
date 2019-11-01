@@ -7,7 +7,7 @@ import ReadMoreReact from 'read-more-react';
 const IntroVideo = (props) =>(
     <div id="videoDiv">
         <img className="vidImagOverlay" src={Analytics_Network} alt="videimage"/>
-        <div className="overlayText col-md-5">
+        <div className="overlayText col-md-5 col-xs-12 col-sm-12 col-lg-5">
             <p className="vidHeadingText">{props.local.AboutUs.heading}</p>
             <hr className="vidHr"/>
             <p className="vidSubText">
@@ -17,7 +17,7 @@ const IntroVideo = (props) =>(
             />
             </p>
         </div>
-        <div className="videoDivOverlay">
+        <div className="videoDivOverlay col-md-7 col-xs-12 col-sm-12 col-lg-7">
             <VideoPage 
                 mouseOverEvent = {props.mouseOverEvent}
                 reference = {props.reference}

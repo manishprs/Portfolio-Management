@@ -69,11 +69,11 @@ footer {
 
 /* navigation css */
 
-.mr-auto, .mx-auto {
+.mr-auto1, .mx-auto {
   margin-right: none !important;
   width: 50%;
 }
 .navbar-light .navbar-nav .nav-link{
   color: #2a2a2a !important;
-  padding: 4%;
+  padding: 15px;
 }

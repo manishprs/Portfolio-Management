@@ -20,10 +20,10 @@ const ourTeam = (props) =>(
                 <div className="perContent">
                     <div className="perName">{e.name}</div>
                     <hr className="hrname"/>
-                    <p className="perDescription">
+                    <div className="perDescription">
                         <ReadMoreReact text={e.perDesc}
                             readMoreText='Read more'/>
-                    </p>
+                    </div>
                 </div>
                 </div>
             </div>              

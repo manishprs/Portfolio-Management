@@ -13,19 +13,19 @@ const QueryForm = (props) => (
             <hr className="hrContactFirst"/>
             <p className="salutation">We'd <FontAwesomeIcon icon={faHeart}/> to help!</p>
             <p className="contactContent">{props.local.ContactUs.content}</p>
-            <div className="row customeRow col-md-12">
-                <div className="contactColumn left col-md-1 col-lg-1 col-xs-1 col-sm-1">
+            <div className="row">
+                {/* <div className="contactColumn left col-md-1 col-lg-1 col-xs-1 col-sm-1">
                     <p><FontAwesomeIcon icon={faUser} size="2x"/></p>
                     <p><FontAwesomeIcon icon={faMapMarker} size="2x"/></p>
                     <p><FontAwesomeIcon icon={faPhone} size="2x"/></p>
                     <p><FontAwesomeIcon icon={faEnvelope} size="2x"/></p>
-                </div>
-                <div className="contactColumn right col-md-11 col-lg-11 col-xs-11 col-sm-11">
-                    <p className="contactName">{props.local.ContactUs.name}</p>
-                    <p className="contactaddressLine1">{props.local.ContactUs.addressLine1}</p>
+                </div> */}
+                <div className="offset-lg-4 col-lg-4 offset-lg-4 offset-sm-4 col-sm-4 offset-sm-4 offset-md-4 col-md-4 offset-md-4 col-xs-12">
+                    <p className="contactName"><FontAwesomeIcon icon={faUser} size="1x"/>{' '}{props.local.ContactUs.name}</p>
+                    <p className="contactaddressLine1"><FontAwesomeIcon icon={faMapMarker} size="1x"/>{' '}{props.local.ContactUs.addressLine1}</p>
                     <p className="contactaddressLine2">{props.local.ContactUs.addressLine2}</p>
-                    <p className="contactNumber">{props.local.ContactUs.contactNo}</p>
-                    <p className="contactEmail">{props.local.ContactUs.email}</p>
+                    <p className="contactNumber"><FontAwesomeIcon icon={faPhone} size="1x"/>{' '}{props.local.ContactUs.contactNo}</p>
+                    <p className="contactEmail"><FontAwesomeIcon icon={faEnvelope} size="1x"/>{' '}{props.local.ContactUs.email}</p>
                 </div>
             </div>
             <hr className="hrcontactLast"/>

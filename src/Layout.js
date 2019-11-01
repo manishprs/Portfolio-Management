@@ -10,11 +10,11 @@ class Layout extends React.Component {
 
   scrollToAboutUs = () => {
     var elmnt = document.getElementById("videoDiv");
-    elmnt.scrollIntoView();
+    elmnt.scrollIntoView({behavior: "smooth"});
   }
   scrollToContact = () => {
     var elmnt = document.getElementById("getInTouch");
-    elmnt.scrollIntoView();
+    elmnt.scrollIntoView({behavior: "smooth"});
   }
   render() {
     return (

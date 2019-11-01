@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import ReadMoreReact from 'read-more-react';
 
 const ourTeam = (props) =>(
@@ -14,7 +14,7 @@ const ourTeam = (props) =>(
                 <div className="perWrapper">
                 <div className="ibShap">
                     <div className="perAvatar">
-                    <FontAwesomeIcon icon={faUserCircle}  size="6x" />
+                    <FontAwesomeIcon icon={faUser}  size="6x" />
                     </div>
                 </div>
                 <div className="perContent">

@@ -545,7 +545,10 @@ figure{
 }
 /* //#0077ed style={{ color: '#777' }}*/
 .fa-user-circle{
-  color: #1d54a2;
+  /* color: #1d54a2; */
+}
+.fa-user{
+  color: rgba(0, 113, 255, 0.8);
 }
 .read-more-button{
   Color: #1d54a2;

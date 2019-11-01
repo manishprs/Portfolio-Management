@@ -253,11 +253,11 @@ export const fetchLevelOneList = parameters => {
                                 // do nothing
                                 break;
                         }
-                        dispatch(saveLevelOneList({
-                            levelOneList,
-                            isLevelOneLoading: false
-                        }));
-                    });                    
+                    });  
+                    dispatch(saveLevelOneList({
+                        levelOneList,
+                        isLevelOneLoading: false
+                    }));                  
                 }
                 else {
                     console.log('REDUX levelOneList', response);
@@ -319,11 +319,11 @@ export const fetchLevelTwoList = parameters => {
                                 // do nothing
                                 break;
                         }
-                        dispatch(saveLevelTwoList({
-                            levelTwoList,
-                            isLevelTwoLoading: false
-                        }));
-                    });                    
+                    });  
+                    dispatch(saveLevelTwoList({
+                        levelTwoList,
+                        isLevelTwoLoading: false
+                    }));                  
                 }
                 else {
                     console.log('REDUX levelTwoList', response);
@@ -555,7 +555,7 @@ export const manageActiveLevel = parameters => {
         if(prevState.activeLevel.id !== id || prevState.activeLevel.level !== level)
             dispatch(saveActiveLevel({ level: level, id: id }))
         else if(prevState.activeLevel.id === id && prevState.activeLevel.level === level)
-            dispatch(saveActiveLevel({ level: 0, id: getState().pm.activeAccount }));
+            dispatch(saveActiveLevel({ level: "0", id: getState().pm.activeAccount }));
         else 
             dispatch(saveActiveLevel(prevState.activeLevel));
     }

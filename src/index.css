@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
 body,html {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   margin:0;
 }
-html * {
+/* html * {
   font-family: 'Roboto', Serif;
-}
+} */
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -47,6 +48,9 @@ header {
   color: rgba(0,0,0,.5);
   /* color: rgb(68,68,68,.5); */
   font-size: 15px;
+  font-style: normal;
+  font-family: "Montserrat";
+ font-weight: 600;
 }
 article {
   height: calc(100% - 100px);

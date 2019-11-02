@@ -29,8 +29,8 @@ const QueryForm = (props) => (
             <Row>
                 <div className="brandClass offset-lg-4 col-lg-4 offset-lg-4 offset-sm-4 col-sm-4 offset-sm-4 offset-md-4 col-md-4 offset-md-4 col-xs-12">
                     <Nav> 
-                        <Nav.Link className="c-name" href="https://www.linkedin.com/in/shovenshrivastava/" target="_blank"><FontAwesomeIcon icon={faLinkedin} size="2x"/></Nav.Link>
-                        <Nav.Link className="c-name" href="https://twitter.com/AviLogicInc" target="_blank"><FontAwesomeIcon icon={faTwitterSquare} size="2x"/></Nav.Link>
+                        <Nav.Link className="c-name" title="Linkedin" href="https://www.linkedin.com/in/shovenshrivastava/" target="_blank"><FontAwesomeIcon icon={faLinkedin} size="2x"/></Nav.Link>
+                        <Nav.Link className="c-name" title="Twitter" href="https://twitter.com/AviLogicInc" target="_blank"><FontAwesomeIcon icon={faTwitterSquare} size="2x"/></Nav.Link>
                     </Nav>
                 </div>
             </Row>

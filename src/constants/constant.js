@@ -68,19 +68,19 @@ var data = {
         },
     ServicesOverlay:[
         {
-            headingTitle:"Portfolio Management",
+            headingTitle:"Portfolio Analytics",
             image:Portfolio,
             iconImg:portfolio_icon,
             content:"Business analytics (BA) is the practice of iterative, methodical exploration of an organization's data with emphasis on statistical analysis.",
         },
         {
-            headingTitle:"Block Chain",
+            headingTitle:"Big Data Processing Engine",
             image:Blockchain,
             iconImg:Blockchain_icon,
             content:"Business analytics (BA) is the practice of iterative, methodical exploration of an organization's data with emphasis on statistical analysis.",
         },
         {
-            headingTitle:"Report and Analytics",
+            headingTitle:"Analytics, Reporting and Distribution",
             image:Report,
             iconImg:Report_icon,
             content:"Business analytics (BA) is the practice of iterative, methodical exploration of an organization's data with emphasis on statistical analysis.",
@@ -91,8 +91,8 @@ var data = {
         text:'An AI and Blockchain based Middle office Solution for Investement Industry we are unique fintech company which offers service as well as develop products. We uses latest Big Data Technologies to provided Cloud Based low cost platform and AI for portfolio Commentary and Portfolio Sentiment Analysis. We brings Portfolio Performance and Risk Analytics to your phone.'
     },
     ContactUs:{
-        salutation:"We'd {icon} to help",
-        content:"We like to create things with fun, open-minded people. Feel free to say hello!",
+        salutation:"",
+        content:"Please Contact Shoven Shrivastava for demo!",
         name:'Shoven Shrivastava',
         addressLine1:'Inviktus - Lynnfield, MA',
         addressLine2:'',
@@ -103,7 +103,7 @@ var data = {
         desc:'',
         per:[
             {
-                name:'Shoven Shrivastav',
+                name:'Shoven Shrivastava',
                 perDesc: 'Shoven Shrivastava has very good experience in implementing digital transformation program for middle and large enterprise. Shoven is certified Salesforce Architect. Shoven Shrivastava has extensive experience in doing complicated enterprise wide system implementation with Salesforce Einstein and Salesforce Financial Service cloud. Shoven has expert level knowledge of Salesforce Einstein Analytics and Discovery and Salesforce Financial Cloud. Shoven holds master degree in Finance and Predictive Analytics from Northwestern University.'
             },
             {

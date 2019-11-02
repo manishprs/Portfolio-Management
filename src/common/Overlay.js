@@ -13,9 +13,9 @@ const Overlay = (props) =>(
                         <div className="icon">
                             <span className="icon-graphic"><img src={props.data.iconImg} width="40" height="40" alt={props.data.headingTitle}/></span>
                         </div>
-                        <h4 className="title">
+                        <h5 className="title">
                             <a className="overlay-anchor" href="#">{props.data.headingTitle}</a>
-                        </h4>
+                        </h5>
                     </div>
                     <div className="overlay-box">
                         <div className="icon_box">

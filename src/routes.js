@@ -8,7 +8,7 @@ import CustomerLogin from './components/Login/Customer';
 export default (
     <Route>
         <Route  exact path="/" component={HomePage} />
-        <Route path="/porfolio" component={PortfolioManagement} />
+        <Route path="/portfolio" component={PortfolioManagement} />
         <Route path="/adminLogin" component={AdminLogin} />
         <Route path="/customerLogin" component={CustomerLogin} />
     </Route>  

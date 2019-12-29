@@ -26,13 +26,6 @@ const graphContent = props => {
    if(props.activeLevel.level !== "0")
       sections.push({ key: 'Level', content: props.activeLevel.id, link: false, active: false });
 
-   if(sections.length === 0) {
-      sections.push({ key: 'Level', content: 'Manulife Balanced Funds', link: false, active: false });
-      sections.push({ key: 'Level', content: 'Manulife Balanced Funds', link: false, active: false });
-      sections.push({ key: 'Level', content: 'Manulife Balanced Funds', link: false, active: false });
-      sections.push({ key: 'Level', content: 'Manulife Balanced Funds', link: false, active: false });
-   }
-
    // let graphTypes = null;
    // if(props.activeAccount !== '' && props.activeReportType !== '') {
       const graphTypes = (

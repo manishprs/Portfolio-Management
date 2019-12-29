@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Alert, Row, Col, Form } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import { Radio, Loader } from 'semantic-ui-react';
 import { Chart } from 'react-google-charts';
 // import moment from 'moment';
@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 import * as actionCreators from '../../store/actions/actions';
 import PMContainer from '../../hoc/PMContainer';
+import PMAlert from '../PMAlert';
 
 class PieGraph extends Component {
 
@@ -157,15 +158,6 @@ class PieGraph extends Component {
                   {levels}
                </Col>               
                <Col sm={4} md={4} lg={5} xs={5}>
-                  
-                  {/* <Select
-                     placeholder="Select Column"
-                     value={ this.state.activeColumn }
-                     options={ columns }
-                     onChange={ this.manageActiveColumnHandler.bind(null) }
-                     style={{ marginLeft: '2%' }}
-                  /> */}
-
                   <Form.Group>
                      <Form.Control 
                         as="select"
@@ -186,20 +178,16 @@ class PieGraph extends Component {
       let markup = null;
       if(this.props.account === '' && this.props.reportType === '') {
          markup = (
-            <Container style={{ marginTop: '5%' }}>
-               <Alert variant="warning">
-                  Select Account and Dashboard to Display Graph
-               </Alert>
-            </Container>
+            <PMAlert 
+               message={ 'Select Account and Dashboard to Display Graph' }
+            />
          );
       }
       else if(this.props.reportType === '') {
          markup = (
-            <Container style={{ marginTop: '5%' }}>
-               <Alert variant="warning">
-                  Select Dashboard to Display Graph
-               </Alert>
-            </Container>
+            <PMAlert 
+               message={ 'Select Dashboard to Display Graph' }
+            />
          );
       }
       else if(this.props.isLoading) {
@@ -215,7 +203,6 @@ class PieGraph extends Component {
          if(this.props.graphData.length > 1 && !this.props.isLoading) {
             chart = (
                <Chart
-                  // width='800px'
                   height='400px'
                   chartType="PieChart"
                   data={ this.props.graphData }
@@ -227,16 +214,14 @@ class PieGraph extends Component {
          }
          else {
             chart = (
-               <Container style={{ marginTop: '5%' }}>
-                  <Alert variant="warning" >
-                     No Data found for the Selected Combination.
-                  </Alert>
-               </Container>
+               <PMAlert 
+                  message={ 'No Data found for the Selected Combination' }
+               />
             );
          }
 
          markup = (
-            <Container fluid={true}>
+            <Container>
                { selectLevel }
                { chart }
             </Container>

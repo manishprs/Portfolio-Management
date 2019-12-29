@@ -43,6 +43,7 @@ const accounts = (props) => {
          <Search 
             searchValue={ props.searchValue }
             searchHandler={ props.searchHandler }
+            placeholder='Search Accounts'
          />
       );
    }

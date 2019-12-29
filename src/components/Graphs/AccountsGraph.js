@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Alert, Card } from 'react-bootstrap';
 import { Chart } from 'react-google-charts';
 
+import PMAlert from '../PMAlert';
+
 const accountsGraph = (props) => {
 
     const data = props.accounts.map(account => {
@@ -13,11 +15,9 @@ const accountsGraph = (props) => {
     let graphData = null;
     if(data.length === 1) {
         graphData = (
-            <Container style={{ marginTop: '5%' }}>
-                <Alert variant="warning">
-                    Accounts List Empty
-                </Alert>
-            </Container>
+            <PMAlert 
+                message={ 'Accounts List Empty' }
+            />
         );
     }
     else {

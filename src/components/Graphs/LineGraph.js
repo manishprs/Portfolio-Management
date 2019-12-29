@@ -1,7 +1,9 @@
 import React from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Alert, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Segment, Select } from 'semantic-ui-react';
+
+import PMAlert from '../PMAlert';
 
 const lineGraph = (props) => {
 
@@ -42,20 +44,16 @@ const lineGraph = (props) => {
    let graph = null;
    if(props.account === '' && props.activeReportType === '') {
       graph = (
-         <Container style={{ marginTop: '5%' }}>
-            <Alert variant="warning">
-               Select Account and Dashboard to Display Graph
-            </Alert>
-         </Container>
+         <PMAlert 
+            message={ 'Select Account and Dashboard to Display Graph' }
+         />
       );
    }
    else if(props.activeReportType === '') {
       graph = (
-         <Container style={{ marginTop: '5%' }}>
-            <Alert variant="warning">
-               Select Dashboard to Display Graph
-            </Alert>
-         </Container>
+         <PMAlert 
+            message={ 'Select Dashboard to Display Graph' }
+         />
       );
    }
    else if(props.data.length > 0) {
@@ -83,11 +81,9 @@ const lineGraph = (props) => {
    }
    else {
       graph = (
-         <Container style={{ marginTop: '5%' }}>
-            <Alert variant="warning">
-               No Data found for the Selected Combination.
-            </Alert>
-         </Container>
+         <PMAlert 
+            message={ 'No Data found for the Selected Combination' }
+         />
       );
    }
    return (

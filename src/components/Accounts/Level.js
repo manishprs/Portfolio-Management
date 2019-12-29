@@ -5,6 +5,7 @@ import MyIcons from '../../hoc/MyIcons';
 
 import '../../containers/App.css';
 import './Accounts.css';
+import Search from '../Search/Search';
 
 const level = (props) => {
 
@@ -36,25 +37,32 @@ const level = (props) => {
 
    let search = null;
    if(props.isOpen && props.levelList.length > 2) {
+      // search = (
+      //    <Input 
+      //       placeholder="search..."
+      //       icon
+      //       // onClick={ this.searchActiveHandler } 
+      //       labelPosition='right corner'
+      //       size="mini"  
+      //       style={{ padding: '5%' }}            
+      //    >
+      //       <Input 
+      //          placeholder="search..." 
+      //          value={ props.searchValue }
+      //          onChange={ props.searchHandler }
+      //       />
+      //       <Icon 
+      //          name="search"  
+      //          style={{ padding: '5%' }} 
+      //       />
+      //    </Input>
+      // );
       search = (
-         <Input 
-            placeholder="search..."
-            icon
-            // onClick={ this.searchActiveHandler } 
-            labelPosition='right corner'
-            size="mini"  
-            style={{ padding: '5%' }}            
-         >
-            <Input 
-               placeholder="search..." 
-               value={ props.searchValue }
-               onChange={ props.searchHandler }
-            />
-            <Icon 
-               name="search"  
-               style={{ padding: '5%' }} 
-            />
-         </Input>
+         <Search 
+            searchValue={ props.searchValue }
+            searchHandler={ props.searchHandler }
+            placeholder={ `Search ${ (props.level === '1' ? 'Filters' : 'Sub Filters') }` }
+         />
       );
    }
 

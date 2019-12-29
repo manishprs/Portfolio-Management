@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Row } from 'react-bootstrap';
 
 // import logo from '../../assets/invictusLogo.svg';
 import logo from '../../assets/Logo.svg';
@@ -34,29 +34,31 @@ const header = props => {
    }
    
    return (
-      <Navbar expand="lg" style={{ backgroundColor: '#ffffff',height:'100%' }}>
-         <Navbar.Brand href="/">
-            <img
-               alt="Invictus Analytics"
-               src={ logo }
-               width="auto"
-               height="55"
-               className="d-inline-block align-top"
-               style={{ marginLeft: '20%' }}
-            />  
-            { sidebarLeft }          
-            { sidebarRight }
-         </Navbar.Brand>
-         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Row xs={12} className='pm-header'>
+         <Navbar>
+            {/* <Navbar.Brand href="/">
+               <img
+                  alt="Invictus Analytics"
+                  src={ logo }
+                  width="auto"
+                  height="55"
+                  className="d-inline-block align-top"
+                  style={{ marginLeft: '20%' }}
+               />  
+               { sidebarLeft }          
+               { sidebarRight }
+            </Navbar.Brand> */}
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto"></Nav>
-                <Nav>
-                <Nav.Link href="/adminLogin">Admin</Nav.Link>
-                <Nav.Link href="/customerLogin">Customer</Nav.Link>
-                <Nav.Link href="/porfolio">Portfolio</Nav.Link>
-                </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+               <Nav className="mr-auto"></Nav>
+               <Nav>
+                  <Nav.Link className='header-nav-items' href="/adminLogin">Admin</Nav.Link>
+                  <Nav.Link className='header-nav-items' href="/customerLogin">Customer</Nav.Link>
+                  <Nav.Link className='header-nav-items' href="/porfolio">Portfolio</Nav.Link>
+               </Nav>
+            </Navbar.Collapse>
+         </Navbar>
+      </Row>
    );
 }
 export default header;

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Menu, Icon, Input, Loader } from 'semantic-ui-react';
 import PMContainer from '../../hoc/PMContainer';
-import MyIcons from '../../hoc/MyIcons'; 
+import MyIcons from '../../hoc/MyIcons';
+import { Row } from 'react-bootstrap';
 
 import './Columns.css';
 import '../../containers/App.css';
@@ -33,9 +34,9 @@ class Columns extends Component {
       
       let header = (
          <div onClick={ this.searchActiveHandler }>
-            <MyIcons logo={logo} />
+            {/* <MyIcons logo={logo} /> */}
             Attributes 
-            <Icon name="search" style={{ float: 'right' }} />
+            {/* <Icon name="search" style={{ float: 'right' }} /> */}
          </div>
       );
 
@@ -46,10 +47,18 @@ class Columns extends Component {
       else{
 
          let columnList = this.props.columns;
+         columnList = ['ret', 'ret_1y', 'wet_avg_mgt', 'ret_1y', 'ret_2yd', 'ret_1', 'ret_1ya', 'ret_1', 'ret_1y'];
 
          if(this.state.searchActive && this.searchValue !== '') {
             columnList = this.props.columns.filter(current => current.includes(this.state.searchValue))
          }
+
+         // <Menu.Item
+         //    name={ current.name }
+         //    active={ props.activeReportType === current.id }
+         //    key={ current.id }
+         //    onClick={ props.click.bind(null, current.id) }
+         // />
 
          columns = columnList.map(column => {
             return (
@@ -57,10 +66,10 @@ class Columns extends Component {
                   as='span'
                   key={ column }
                   onClick={ this.props.click.bind(null, column) }
-                  className={`column-list-item ${this.props.activeColumns.indexOf(column) !== -1 ? 'column-active-item' : ''}`}
+                  className={`pm-column-list-item ${this.props.activeColumns.indexOf(column) !== -1 ? 'pm-active-column-list-item' : ''}`}
                   title={ column }
+                  style={{ color: '#2A363A', margin: 0, padding: 0, padding: '10px 20px' }}
                >
-                  {/* { stringCutter(column, 18) } */}
                   { column }
                </Menu.Item>
             );
@@ -90,14 +99,14 @@ class Columns extends Component {
       }
 
       return (
-         <PMContainer>
-            <Menu.Item as='a' header style={{ color: 'rgb(61, 107, 130)' }}>
-              { header }
-            </Menu.Item>
-            <div className="columns" id="my-scroll">
+         <section>
+            <Row style={{ padding: '15px', fontSize: '14px', backgroundColor: '#1263a1', color: '#FFFFFF'  }}>
+               Attributes
+            </Row>
+            <Menu secondary vertical>
                { columns }
-            </div>
-         </PMContainer>
+            </Menu>
+         </section>
       );
    }
 }

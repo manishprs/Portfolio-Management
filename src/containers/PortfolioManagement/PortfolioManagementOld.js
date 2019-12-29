@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-// import { Menu, Sidebar } from 'semantic-ui-react';
+import { Menu, Sidebar } from 'semantic-ui-react';
 
 import Header from '../../components/Main/Header';
 import SideBarContent from '../../components/Main/SideBarContent';
@@ -9,12 +9,6 @@ import GraphContent from '../../components/Main/GraphContent';
 import RightBar from '../../components/Main/RightBar';
 import PMContainer from '../../hoc/PMContainer';
 import * as actionCreators from '../../store/actions/actions';
-
-import { Row, Col } from 'react-bootstrap';
-
-import MainContainer from '../../hoc/MainContainer';
-import ContentContainer from '../../hoc/ContentContainer';
-import SideBar from '../../components/Main/SideBar';
 
 class PortfolioManagement extends PureComponent{
 
@@ -225,71 +219,84 @@ class PortfolioManagement extends PureComponent{
       const graphContentClassName = (this.state.sidebarOpen ? 'pm-graph-content-container' : 'pm-graph-content-container pm-graph-content-full-screen');
       const toggleFSIcon = (this.state.sidebarOpen ? 'expand' : 'compress');
       return (
-         <MainContainer>
-            <SideBar 
-               templates={ this.props.templates } 
-               onTemplateClick={ this.manageActiveTemplateHandler }
-               activeTemplate={ this.props.activeTemplate }
-               isAccountLoading={ this.props.isAccountLoading }
-               accounts={ this.props.accounts } 
-               onAccountClick={ this.manageActiveAccountHandler } 
-               activeAccount={ this.props.activeAccount }
-               reportTypes={ reportTypesForAccountSelected }
-               onReportTypeClick={ (type) => this.props.manageActiveReportType(type) }
-               activeReportType={ this.props.activeReportType }
-               levelOneList={ this.props.levelOneList }
-               isLevelOneLoading={ this.props.isLevelOneLoading }
-               levelTwoList={ this.props.levelTwoList } 
-               isLevelTwoLoading={ this.props.isLevelTwoLoading }
-               onLevelClick={ this.manageActiveLevelHandler }
-               activeLevel={ this.props.activeLevel }
+         <PMContainer>
+            <header>
+            <Header 
+               sideClick={ this.toggleSideBarHandler }
+               rightClick = { this.toggleRightBarHandler }
+               screenWidth = { this.state.screenWidth }
             />
-            <ContentContainer>
-               <Header 
-                  sideClick={ this.toggleSideBarHandler }
-                  rightClick = { this.toggleRightBarHandler }
-                  screenWidth = { this.state.screenWidth }
-               />
-               <Row xs={ 12 }>
-                  <GraphContent 
-                     graphs={ this.props.graphs }
-                     manageActiveGraph={ this.manageActiveGraphHandler }
-                     accounts={ this.props.accounts }
-                     accountTotal={ this.props.accountTotal }
-                     onAccountClick={ this.manageActiveAccountHandler }
-                     data={ this.props.graphData }
-                     activeGraph={ this.props.activeGraph }
-                     activeReportType={ this.props.activeReportType }
-                     onReportTypeClick={ (type) => this.props.manageActiveReportType(type) }
-                     activeAccount={ this.props.activeAccount }
-                     activeColumns={ this.props.activeColumns } 
-                     activeLevel={ this.props.activeLevel }
-                     reportTypes={ reportTypesForAccountSelected }
-                     reportPeriod={ (this.props.reportPeriod[this.props.activeAccount] !== undefined ? this.props.reportPeriod[this.props.activeAccount] : []) }
-                     activeReportPeriod={ this.props.activeReportPeriod }
-                     manageActiveReportPeriod={ this.manageActiveReportPeriodHandler }
-                     endDate={ this.state.endDate }
-                     isLoading={ this.props.isGraphDataLoading }
+            </header>
+            <Sidebar.Pushable>
+               <Sidebar 
+                  as={ Menu } 
+                  vertical 
+                  visible={this.state.sidebarOpen}
+                  animation="overlay"
+                  className="pm-left-sidebar"
+               >
+                  <SideBarContent
+                     templates={ this.props.templates } 
+                     onTemplateClick={ this.manageActiveTemplateHandler }
+                     activeTemplate={ this.props.activeTemplate }
                      isAccountLoading={ this.props.isAccountLoading }
-                     toggleFullScreen={ this.toggleFullScreen }
-                     toggleFSIcon={ toggleFSIcon }
-                     screenWidth={ this.state.screenWidth }
+                     accounts={ this.props.accounts } 
+                     onAccountClick={ this.manageActiveAccountHandler } 
+                     activeAccount={ this.props.activeAccount }
+                     reportTypes={ reportTypesForAccountSelected }
+                     onReportTypeClick={ (type) => this.props.manageActiveReportType(type) }
+                     activeReportType={ this.props.activeReportType }
+                     levelOneList={ this.props.levelOneList }
+                     isLevelOneLoading={ this.props.isLevelOneLoading }
+                     levelTwoList={ this.props.levelTwoList } 
+                     isLevelTwoLoading={ this.props.isLevelTwoLoading }
+                     onLevelClick={ this.manageActiveLevelHandler }
+                     activeLevel={ this.props.activeLevel }
                   />
-                  <RightBar
-                     startDate={this.state.startDate}
-                     endDate={this.state.endDate}
-                     startDateChange={(date) => this.handleStartDateChange(date)}
-                     endDateChange={(date) => this.handleEndDateChange(date)}
-                     activeGraph={ this.props.activeGraph }
-                     columns={ this.props.columns } 
-                     activeColumns={ this.props.activeColumns }
-                     manageActiveColumns={ this.manageActiveColumnsHandler }
-                     toggle={ this.state.rightbarOpen }
-                     isLoading={ this.props.isColumnLoading }
-                  />
-               </Row>
-            </ContentContainer>
-         </MainContainer>
+               </Sidebar>
+
+               <RightBar
+                  startDate={this.state.startDate}
+                  endDate={this.state.endDate}
+                  startDateChange={(date) => this.handleStartDateChange(date)}
+                  endDateChange={(date) => this.handleEndDateChange(date)}
+                  activeGraph={ this.props.activeGraph }
+                  columns={ this.props.columns } 
+                  activeColumns={ this.props.activeColumns }
+                  manageActiveColumns={ this.manageActiveColumnsHandler }
+                  toggle={ this.state.rightbarOpen }
+                  isLoading={ this.props.isColumnLoading }
+               />
+               <Sidebar.Pusher>
+                  <div className={ graphContentClassName }>
+                     <GraphContent 
+                        graphs={ this.props.graphs }
+                        manageActiveGraph={ this.manageActiveGraphHandler }
+                        accounts={ this.props.accounts }
+                        accountTotal={ this.props.accountTotal }
+                        onAccountClick={ this.manageActiveAccountHandler }
+                        data={ this.props.graphData }
+                        activeGraph={ this.props.activeGraph }
+                        activeReportType={ this.props.activeReportType }
+                        onReportTypeClick={ (type) => this.props.manageActiveReportType(type) }
+                        activeAccount={ this.props.activeAccount }
+                        activeColumns={ this.props.activeColumns } 
+                        activeLevel={ this.props.activeLevel }
+                        reportTypes={ reportTypesForAccountSelected }
+                        reportPeriod={ (this.props.reportPeriod[this.props.activeAccount] !== undefined ? this.props.reportPeriod[this.props.activeAccount] : []) }
+                        activeReportPeriod={ this.props.activeReportPeriod }
+                        manageActiveReportPeriod={ this.manageActiveReportPeriodHandler }
+                        endDate={ this.state.endDate }
+                        isLoading={ this.props.isGraphDataLoading }
+                        isAccountLoading={ this.props.isAccountLoading }
+                        toggleFullScreen={ this.toggleFullScreen }
+                        toggleFSIcon={ toggleFSIcon }
+                        screenWidth={ this.state.screenWidth }
+                     />
+                  </div>                     
+               </Sidebar.Pusher>
+            </Sidebar.Pushable>
+         </PMContainer>
       );
    }
 }

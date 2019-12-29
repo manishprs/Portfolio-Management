@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Alert } from 'react-bootstrap';
+import { Container, Alert, Card } from 'react-bootstrap';
 import { Chart } from 'react-google-charts';
 
 const accountsGraph = (props) => {
@@ -55,10 +55,14 @@ const accountsGraph = (props) => {
     }
 
    return (
-        <Container>
-            <h1 style={{ color: '#33567E' }}>Accounts</h1>
-            { graphData }
-        </Container>
+        <section>
+            <div className='section-heading-container'>
+                <span className='section-heading-text'>Accounts</span>
+            </div>
+            <div>
+                { graphData }
+            </div>
+        </section>
    );
 }
 

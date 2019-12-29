@@ -7,6 +7,8 @@ import barGraph from '../../assets/barChart.svg';
 import pieGraph from '../../assets/pieChart.svg';
 import table from '../../assets/table.svg';
 
+import '../../containers/App.css';
+
 const graphTypes = (props) => {
 
    const logos = {
@@ -25,6 +27,8 @@ const graphTypes = (props) => {
                style={ graph.id === props.activeGraph ? { color: '#334660' } : { color: '#2a363a' }} 
                onClick={ props.click.bind(this, graph.id) } 
                eventKey={ graph.id }
+               className={ (graph.id === props.activeGraph ? 'pm-active-graph-type' : 'pm-graph-types') }
+               // className='pm-active-graph-type'
             >
                <MyIcons logo={ logos[graph.id] } />
                { graph.name}
@@ -34,7 +38,7 @@ const graphTypes = (props) => {
    }); 
 
    return (
-      <Nav justify variant="tabs" defaultActiveKey={props.activeGraph}>
+      <Nav justify  defaultActiveKey={props.activeGraph} style={{ padding: '5px' }}>
          { graphs }
       </Nav>
    );

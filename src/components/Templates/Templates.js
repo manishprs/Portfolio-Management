@@ -15,7 +15,7 @@ const templates = (props) => {
          <ListGroup.Item  
             onClick={props.click.bind(null, template.id)} 
             key={template.id}
-            className={ `list-item ${template.id === props.active ? 'active-item' : '' }` }
+            className={ `pm-side-bar-sub-list-item ${template.id === props.active ? 'active-item' : '' }` }
          >
             {/* {stringCutter(template.name, 10)} */}
             { template.name }
@@ -24,19 +24,22 @@ const templates = (props) => {
    });
 
    return (
-      <ListGroup.Item className="left-sidebar-list-item">
+      <ListGroup.Item className='pm-side-bar-list-group-item'>
          <Accordion.Toggle 
             as={ListGroup.Item} 
             eventKey="templates"
-            className='pm-sidebar-items'
+            className='pm-side-bar-accordion-toggle'
             onClick={ props.openHandler.bind(null, 'templates') }
          >
-            <MyIcons logo={logo} />
+            {/* <MyIcons logo={logo} /> */}
             Saved Templates
             <Icon style={{ float: 'right'}} name={ iconName } />
          </Accordion.Toggle>
          <Accordion.Collapse eventKey="templates">
-            <ListGroup variant="flush">
+            <ListGroup 
+               variant="flush"
+               className="pm-side-bar-sub-list-group" 
+            >
                { templates }
             </ListGroup>
          </Accordion.Collapse>

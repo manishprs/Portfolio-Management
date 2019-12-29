@@ -15,7 +15,7 @@ const reportTypes = props => {
       reportTypes = (
          <ListGroup.Item 
             title="No Data Found" 
-            className={ `list-item` } 
+            className={ `pm-side-bar-sub-list-item` } 
             key="no-data-found"
          >
             No Report Types
@@ -28,7 +28,7 @@ const reportTypes = props => {
             <ListGroup.Item  
                key={type.id}
                title={type.name}
-               className={`list-item ${props.active === type.id ? 'active-item' : ''}`}
+               className={`pm-side-bar-sub-list-item ${props.active === type.id ? 'pm-side-bar-sub-list-item-active' : ''}`}
                onClick={props.click.bind(null, type.id)}
             >
                { (props.active === type.id) ? <Icon className="pm-active-icon" name="angle right" /> : '' }
@@ -39,19 +39,19 @@ const reportTypes = props => {
    }
 
    return (
-      <ListGroup.Item className="left-sidebar-list-item">
+      <ListGroup.Item className='pm-side-bar-list-group-item'>
          <Accordion.Toggle 
             as={ListGroup.Item} 
             eventKey="report-types"
-            className='pm-sidebar-items'
+            className='pm-side-bar-accordion-toggle'
             onClick={ props.openHandler.bind(null, 'report-types') }
          >
-            <MyIcons logo={logo} />
+            {/* <MyIcons logo={logo} /> */}
             Dashboard
             <Icon style={{ float: 'right' }} name={ iconName } />
          </Accordion.Toggle>
          <Accordion.Collapse eventKey="report-types">
-            <ListGroup variant="flush">
+            <ListGroup variant="flush" className="pm-side-bar-sub-list-group">
                { reportTypes }
             </ListGroup>
          </Accordion.Collapse>

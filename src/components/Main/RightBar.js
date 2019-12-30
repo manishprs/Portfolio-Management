@@ -11,8 +11,8 @@ const rightBar = props => {
    return (
       <Col md={ 2 } className='pm-right-container'>
          <Dates
-            startDate={ props.startDate}
-            endDate={ props.endDate}
+            startDate={ props.startDate }
+            endDate={ props.endDate }
             startDateChange={ props.startDateChange }
             endDateChange={ props.endDateChange }
             activeGraph={ props.activeGraph }

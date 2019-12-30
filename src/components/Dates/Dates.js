@@ -1,8 +1,8 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
 import moment from 'moment';
-import { Menu } from 'semantic-ui-react';
-import { Row, Button } from 'react-bootstrap';
+import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
+import _isEmpty from 'lodash/isEmpty';
 
 // import "react-datepicker/dist/react-datepicker.css";
 
@@ -13,32 +13,50 @@ import PMContainer from '../../hoc/PMContainer';
 
 const dates = props => {
 
-   let start = props.startDate ? moment(props.startDate).format('YYYY-MM-DD') : null;
-   let end = props.endDate ? moment(props.endDate).format('YYYY-MM-DD') : null;
+   let start = (props.startDate ? moment(props.startDate).format('YYYY-MM-DD') : null);
+   let end = (props.endDate ? moment(props.endDate).format('YYYY-MM-DD') : null);
    let label = start ? start + ' - ' + end : null;
    if (start === end) label = start;
 
+   console.log('start', start, 'end', end);
+
    return (
-      <section className='pm-date-container'>
-         <DatetimeRangePicker
-            className="col-12 p-0"
-            startDate={ props.startDate }
-            endDate={ props.endDate }
-            // onEvent={this.handleEvent}
-         >
-            <Button className="selected-date-range-btn" color="light" style={{ width: '100%' }}>
-               <div className="float-left">
-                  <i className="fa fa-calendar" />
-                  &nbsp;
-                  <span>
-                     { label }
-                  </span>
-               </div>
-               <div className="float-right">
-                  <i className="fa fa-angle-down" />
-               </div>
-            </Button>
-         </DatetimeRangePicker>
+      <section className='col-12 pm-date-range-container'>
+         <Row className='pm-date-range-header'>
+            Date Range
+         </Row>
+         <Row>
+            <Col xs={ 12 }>
+               <DatetimeRangePicker
+                  className="col-12 p-0"
+                  startDate={ moment(props.startDate) }
+                  endDate={ moment(props.endDate) }
+                  // onEvent={this.handleEvent}
+                  onEvent={ () => console.log('Date clicked') }
+               >
+                  {/* <Button variant='light' className='pm-date-range-button'>
+                     <i className="calendar alternate outline icon" />
+                        &nbsp;
+                     <span>
+                        { label }
+                     </span>
+                  </Button> */}
+                  
+                  <InputGroup className='pm-date-range-input'>
+                     {/* <InputGroup.Prepend>
+                        <InputGroup.Text id="btnGroupAddon"><i className="calendar alternate outline icon" /></InputGroup.Text>
+                     </InputGroup.Prepend> */}
+                     <FormControl
+                        type='text'
+                        placeholder='Date Range'
+                        value={label}
+                        // size='sm'
+                        style={{ border: 'none', borderRadius: 0, borderBottom: '1px solid #1263a1', width: 'auto' }}
+                     />
+                  </InputGroup>
+               </DatetimeRangePicker>
+            </Col>
+         </Row>
          {/* <Menu.Item as='a'>
             <DatePicker
                className="form-group form-control"

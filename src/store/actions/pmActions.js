@@ -587,3 +587,25 @@ export const manageActiveReportType = type => {
         }
     }
 }
+
+/**
+ * AUTH ACTIONS
+*/
+
+const dispatchLogin = payload => {
+    return {
+        type: actionTypes.MANAGE_LOGIN,
+        payload: payload
+    }
+}
+
+export const manageLogin = () => {
+
+    return dispatch => {
+
+        dispatch(dispatchLogin({
+            token: 'token',
+            username: 'username'
+        }));
+    }
+}

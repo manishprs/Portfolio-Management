@@ -31,7 +31,7 @@ const showGraph = (props) => {
             activeReportType={ props.activeReportType }
             reportPeriod={ props.reportPeriod }
             activeReportPeriod={ props.activeReportPeriod }
-            onPeriodChange = { (event, data) => props.onPeriodChange(event, data) }
+            onPeriodChange = { (event) => props.onPeriodChange(event) }
          />
          break;
 
@@ -44,7 +44,7 @@ const showGraph = (props) => {
             activeReportType={ props.activeReportType }
             reportPeriod={ props.reportPeriod }
             activeReportPeriod={ props.activeReportPeriod }
-            onPeriodChange = { (event, data) => props.onPeriodChange(event, data) }
+            onPeriodChange = { (event) => props.onPeriodChange(event) }
          />
          break;
       
@@ -54,7 +54,7 @@ const showGraph = (props) => {
             columns={ props.activeColumns }
             account={ props.activeAccount }
             date={ props.endDate }
-            onPeriodChange = { (event, data) => props.onPeriodChange(event, data) }
+            onPeriodChange = { (event) => props.onPeriodChange(event) }
          />
          break;
 
@@ -66,7 +66,7 @@ const showGraph = (props) => {
             activeReportType={ props.activeReportType }
             reportPeriod={ props.reportPeriod }
             activeReportPeriod={ props.activeReportPeriod }
-            onPeriodChange = { (event, data) => props.onPeriodChange(event, data) }
+            onPeriodChange = { (event) => props.onPeriodChange(event) }
          />
          break;
 

@@ -65,10 +65,16 @@ class PieGraph extends Component {
       }
    }
 
-   manageCheckHandler = level => {
+   // manageCheckHandler = level => {
 
+   //    this.setState({
+   //       activeLevel: level
+   //    });
+   // }
+
+   manageActiveLevelHandler = event => {
       this.setState({
-         activeLevel: level
+         activeLevel: event.target.value
       });
    }
 
@@ -110,7 +116,7 @@ class PieGraph extends Component {
             // });
 
             const periods = reportPeriod.map(current => {
-               return <option value={current}>{current}</option>;
+               return <option key={ current } value={ current }>{ current }</option>;
             });
 
             periodMarkup = (
@@ -128,6 +134,7 @@ class PieGraph extends Component {
                         as="select" 
                         value={ this.state.activePieReportPeriod }
                         onChange={ this.manageActiveReportPeriodHandler.bind(null) }
+                        className='pm-select-input'
                      >
                         {periods}
                      </Form.Control>
@@ -140,35 +147,44 @@ class PieGraph extends Component {
       const levels = this.state.levels.map(level => {
 
          return (               
-            <Radio 
-               key={level}
-               checked={ this.state.activeLevel === level } 
-               label={`Level - ${level}`} 
-               name="radioGroup"
-               onChange={ this.manageCheckHandler.bind(null, level) }
-               style={{ marginRight: '3%' }}
-            />               
+            // <Radio 
+            //    key={level}
+            //    checked={ this.state.activeLevel === level } 
+            //    label={`Level - ${level}`} 
+            //    name="radioGroup"
+            //    onChange={ this.manageCheckHandler.bind(null, level) }
+            //    style={{ marginRight: '3%' }}
+            // /> 
+            <option key={ level } value={level}>{ `Level - ${level}` }</option>       
          );
       });    
 
       const selectLevel = (
          <Container fluid={true}>
             <Row>
-               <Col sm={4} md={3} lg={3} xs={2}>
-                  {levels}
+               <Col xs={4} md={3}>
+                  <Form.Control 
+                     as="select"
+                     value={ this.state.activeLevel }
+                     onChange={ this.manageActiveLevelHandler }
+                     className='pm-select-input'
+                  >
+                     {levels}
+                  </Form.Control>
                </Col>               
-               <Col sm={4} md={4} lg={5} xs={5}>
+               <Col xs={4} md={3}>
                   <Form.Group>
                      <Form.Control 
                         as="select"
                         value={ this.state.activeColumn }
-                        onChange={ this.manageActiveColumnHandler.bind(null) }
+                        onChange={ this.manageActiveColumnHandler }
+                        className='pm-select-input'
                      >
                         {columns}
                      </Form.Control>
                   </Form.Group>
                </Col>
-               <Col sm={4} md={4} lg={4} xs={5}>
+               <Col xs={4} md={3}>
                   {periodMarkup}
                </Col>
             </Row>

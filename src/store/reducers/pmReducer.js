@@ -41,7 +41,7 @@ const initialState = {
     isPieGraphDataLoading: false,
 }
 
-const portfolioManagement = (state = initialState, action) => {
+const pmReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case actionTypes.FETCH_ACCOUNTS:
@@ -108,4 +108,4 @@ const portfolioManagement = (state = initialState, action) => {
             return state;
     }
 }
-export default portfolioManagement;
+export default pmReducer;

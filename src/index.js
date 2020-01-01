@@ -7,9 +7,16 @@ import thunk from 'redux-thunk';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import routes from './routes';
+
+// Persist Redux Configuration Imports
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { PersistGate } from 'redux-persist/integration/react'
+
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import PortfolioManagement from '../src/store/reducers/portfolioManagement';
+import pmReducer from '../src/store/reducers/pmReducer';
+import authReducer from '../src/store/reducers/authReducer';
 
 axios.defaults.baseURL = 'http://52.24.15.178:8085';
 
@@ -22,17 +29,29 @@ axios.defaults.headers = {
 };
 
 const rootReducer = combineReducers({
-   pm: PortfolioManagement
+   pm: pmReducer,
+   auth: authReducer
 });
 
+const persistConfig = {
+   key: 'root',
+   storage,
+   whitelist: [authReducer], //only auth reducer needs to be persisted
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(thunk)));
+const persistor = persistStore(store);
 
 render(
    <Provider store={ store }>
-      <Router history={createBrowserHistory()}>
-         {routes}
-      </Router>
+      <PersistGate loading={null} persistor={persistor}>
+         <Router history={createBrowserHistory()}>
+            {routes}
+         </Router>
+      </PersistGate>
    </Provider>,
    document.getElementById('root'));
 

@@ -1,16 +1,13 @@
 import React, { PureComponent } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-// import { Menu, Sidebar } from 'semantic-ui-react';
 
 import Header from '../../components/Main/Header';
-import SideBarContent from '../../components/Main/SideBarContent';
 import GraphContent from '../../components/Main/GraphContent';
 import RightBar from '../../components/Main/RightBar';
-import PMContainer from '../../hoc/PMContainer';
 import * as actionCreators from '../../store/actions/actions';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 import MainContainer from '../../hoc/MainContainer';
 import ContentContainer from '../../hoc/ContentContainer';
@@ -137,11 +134,12 @@ class PortfolioManagement extends PureComponent{
       });
    }
 
-   manageActiveReportPeriodHandler = (event, data) => {
+   manageActiveReportPeriodHandler = (event) => {
 
+      const value = event.target.value
       this.props.resetState({
          graphData: [],
-         activeReportPeriod: data.value
+         activeReportPeriod: value
       });
    }
 

@@ -18,12 +18,12 @@ const Header = (props) =>(
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto1"></Nav>
                 <Nav>
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="#" onClick={()=> props.scrollToAboutUs()}>About</Nav.Link>
-                <Nav.Link href="/portfolio">Portfolio</Nav.Link>
-                <Nav.Link href="/adminLogin">Admin</Nav.Link>
-                <Nav.Link href="/customerLogin">Customer</Nav.Link>
-                <Nav.Link href="#" onClick={()=>props.scrollToContact()}>Contact</Nav.Link>
+                    <Nav.Link className='header-nav-items' href="/">Home</Nav.Link>
+                    <Nav.Link className='header-nav-items' href="#" onClick={()=> props.scrollToAboutUs()}>About</Nav.Link>
+                    <Nav.Link className='header-nav-items' href="/portfolio">Portfolio</Nav.Link>
+                    <Nav.Link className='header-nav-items' href="/adminLogin">Admin</Nav.Link>
+                    <Nav.Link className='header-nav-items' href="/customerLogin">Customer</Nav.Link>
+                    <Nav.Link className='header-nav-items' href="#" onClick={()=>props.scrollToContact()}>Contact</Nav.Link>
                 </Nav>
         </Navbar.Collapse>
       </Navbar>

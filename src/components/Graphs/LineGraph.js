@@ -1,7 +1,6 @@
 import React from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Container } from 'react-bootstrap';
-import { Segment, Select } from 'semantic-ui-react';
+import { Container, Form } from 'react-bootstrap';
 
 import PMAlert from '../PMAlert';
 
@@ -27,16 +26,26 @@ const lineGraph = (props) => {
          });
 
          periodMarkup = (
-            <Segment.Inline>
-               Report Period:
-               <Select
-                  placeholder="Select Period"
+            // <Segment.Inline>
+            //    Report Period:
+            //    <Select
+            //       placeholder="Select Period"
+            //       value={ props.activeReportPeriod }
+            //       options={ periods }
+            //       onChange={ props.onPeriodChange }
+            //       style={{ marginLeft: '2%' }}
+            //    />
+            // </Segment.Inline>
+            <Form.Group>
+               <Form.Control 
+                  as="select"
                   value={ props.activeReportPeriod }
-                  options={ periods }
                   onChange={ props.onPeriodChange }
-                  style={{ marginLeft: '2%' }}
-               />
-            </Segment.Inline>
+                  className='pm-select-input'
+               >
+                  {periods}
+               </Form.Control>
+            </Form.Group>
          );
       }
    }

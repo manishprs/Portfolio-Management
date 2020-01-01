@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container, Alert, Card } from 'react-bootstrap';
 import { Chart } from 'react-google-charts';
 
 import PMAlert from '../PMAlert';

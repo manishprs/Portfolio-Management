@@ -9,4 +9,5 @@ export {
     manageActiveColumns,
     manageActiveLevel,
     manageActiveReportType,
-} from './portfolioManagement';
+    manageLogin,
+} from './pmActions';

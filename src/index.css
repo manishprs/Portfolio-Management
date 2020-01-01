@@ -205,6 +205,7 @@ footer {
 .pm-active-column-list-item {
   color: #FAFAFA;
   background-color: #2972aa;
+  background-color: #4182b3;
 }
 
 .pm-search-container {
@@ -225,7 +226,6 @@ footer {
   border: none; 
   border-bottom: 1px solid #FFFFFF; 
   border-radius: 0; 
-  background-color: #2972aa; 
   color: #FFFFFF;
   outline: none !important;
 }
@@ -302,11 +302,126 @@ footer {
   margin: 0;
 }
 
-.pm-date-range-input {
+.pm-date-range-input-group {
 
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0 !important;
+  background-color: #FAFAFA;
+}
+
+.pm-date-range-input {
+  border: none; 
+  border-radius: 0; 
+  border-bottom: 1px solid #1263a1; 
+  width: auto;
+  outline: none !important;
+  background-color: #FAFAFA;
+}
+
+.pm-date-range-input:focus {
+  border: none;
+  border-radius: 0; 
+  border-bottom: 1px solid #1263a1;
+  outline: none !important;
+  background-color: #FAFAFA;
+}
+
+.pm-select-input {
+  border-radius: 0; 
+  border: 1px solid #1263a1;
+  background-color: #FAFAFA;
+  outline: none !important;
+}
+
+.pm-select-input:focus, 
+.pm-select-input:active {
+  outline: none !important;
+}
+
+.pm-select-input > option {
+  padding: 15px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #FAFAFA;
 }
 
 /* NEW CSS */
+
+/* Login */
+
+.pm-login-container {
+  /* font-family: 'Roboto', sans-serif; */
+  background-image: url('./assets/Dashboard/Inviktus.jpg');
+  background-size: cover;
+    background-position: center;
+  height: 100vh;
+}
+
+.login-card {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.login-logo-container {
+  text-align: center;
+}
+
+.login-card-body {
+  margin-top: 30px;
+}
+
+.login-text-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-text {
+  font-weight: 100;
+}
+
+.login-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.login-btn-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.error-container {
+  width: 70%;
+  margin: 10px auto 20px auto;
+  font-size: small;
+  font-weight: 100;
+  color: #ff5722;
+}
+
+.input-error-container {
+  width: 70%;
+  margin: -10px auto 20px auto;
+  font-size: small;
+  font-weight: 100;
+  color: #ff5722;
+}
+
+.login-input {
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.error-input {
+  border-color: #ff5722 !important;
+}
+
+.login-btn {
+  width: 70%;
+  background-color: #266985 !important;
+  color: #ffffff !important;
+  margin-bottom: 50px;
+}
+
+/* Customer Login */

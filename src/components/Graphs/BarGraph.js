@@ -1,7 +1,6 @@
 import React from 'react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Container } from 'react-bootstrap';
-import { Segment, Select } from 'semantic-ui-react';
+import { Container, Form } from 'react-bootstrap';
 
 import PMAlert from '../PMAlert';
 
@@ -17,20 +16,21 @@ const barGraph = (props) => {
       if(props.reportPeriod.length > 0) {
 
          const periods = props.reportPeriod.map(current => {
-            return { key:current, value: current, text: current };
+            // return { key:current, value: current, text: current };
+            return <option key={ current } value={ current }>{ current }</option>;
          });
 
          periodMarkup = (
-            <Segment.Inline>
-               Report Period:
-               <Select
-                  placeholder="Select Period"
+            <Form.Group>
+               <Form.Control 
+                  as="select"
                   value={ props.activeReportPeriod }
-                  options={ periods }
                   onChange={ props.onPeriodChange }
-                  style={{ marginLeft: '2%' }}
-               />
-            </Segment.Inline>
+                  className='pm-select-input'
+               >
+                  {periods}
+               </Form.Control>
+            </Form.Group>
          );
       }
    }

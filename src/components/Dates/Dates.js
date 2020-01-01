@@ -1,15 +1,10 @@
 import React from 'react';
-import DatePicker from "react-datepicker";
 import moment from 'moment';
 import { Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap';
 import _isEmpty from 'lodash/isEmpty';
 
-// import "react-datepicker/dist/react-datepicker.css";
-
 import DatetimeRangePicker from '../../lib/react-DateTime-Range';
 import 'bootstrap-daterangepicker/daterangepicker.css';
-
-import PMContainer from '../../hoc/PMContainer';
 
 const dates = props => {
 
@@ -17,8 +12,6 @@ const dates = props => {
    let end = (props.endDate ? moment(props.endDate).format('YYYY-MM-DD') : null);
    let label = start ? start + ' - ' + end : null;
    if (start === end) label = start;
-
-   console.log('start', start, 'end', end);
 
    return (
       <section className='col-12 pm-date-range-container'>
@@ -33,25 +26,13 @@ const dates = props => {
                   endDate={ moment(props.endDate) }
                   // onEvent={this.handleEvent}
                   onEvent={ () => console.log('Date clicked') }
-               >
-                  {/* <Button variant='light' className='pm-date-range-button'>
-                     <i className="calendar alternate outline icon" />
-                        &nbsp;
-                     <span>
-                        { label }
-                     </span>
-                  </Button> */}
-                  
-                  <InputGroup className='pm-date-range-input'>
-                     {/* <InputGroup.Prepend>
-                        <InputGroup.Text id="btnGroupAddon"><i className="calendar alternate outline icon" /></InputGroup.Text>
-                     </InputGroup.Prepend> */}
+               >                  
+                  <InputGroup className='pm-date-range-input-group'>
                      <FormControl
                         type='text'
                         placeholder='Date Range'
                         value={label}
-                        // size='sm'
-                        style={{ border: 'none', borderRadius: 0, borderBottom: '1px solid #1263a1', width: 'auto' }}
+                        className={ 'pm-date-range-input' }
                      />
                   </InputGroup>
                </DatetimeRangePicker>

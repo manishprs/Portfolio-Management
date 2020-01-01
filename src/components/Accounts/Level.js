@@ -37,26 +37,6 @@ const level = (props) => {
 
    let search = null;
    if(props.isOpen && props.levelList.length > 2) {
-      // search = (
-      //    <Input 
-      //       placeholder="search..."
-      //       icon
-      //       // onClick={ this.searchActiveHandler } 
-      //       labelPosition='right corner'
-      //       size="mini"  
-      //       style={{ padding: '5%' }}            
-      //    >
-      //       <Input 
-      //          placeholder="search..." 
-      //          value={ props.searchValue }
-      //          onChange={ props.searchHandler }
-      //       />
-      //       <Icon 
-      //          name="search"  
-      //          style={{ padding: '5%' }} 
-      //       />
-      //    </Input>
-      // );
       search = (
          <Search 
             searchValue={ props.searchValue }

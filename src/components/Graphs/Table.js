@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Container } from 'react-bootstrap';
+import { Table, Container, Form } from 'react-bootstrap';
 import { Segment, Select } from 'semantic-ui-react';
 
 import PMAlert from '../PMAlert';
@@ -17,16 +17,26 @@ const table = (props) => {
          });
 
          periodMarkup = (
-            <Segment.Inline>
-               Report Period:
-               <Select
-                  placeholder="Select Period"
+            // <Segment.Inline>
+            //    Report Period:
+            //    <Select
+            //       placeholder="Select Period"
+            //       value={ props.activeReportPeriod }
+            //       options={ periods }
+            //       onChange={ props.onPeriodChange }
+            //       style={{ marginLeft: '2%' }}
+            //    />
+            // </Segment.Inline>
+            <Form.Group>
+               <Form.Control 
+                  as="select"
                   value={ props.activeReportPeriod }
-                  options={ periods }
                   onChange={ props.onPeriodChange }
-                  style={{ marginLeft: '2%' }}
-               />
-            </Segment.Inline>
+                  className='pm-select-input'
+               >
+                  {periods}
+               </Form.Control>
+            </Form.Group>
          );
       }
    }

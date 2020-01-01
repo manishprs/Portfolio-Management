@@ -142,34 +142,6 @@ class SideBarContent extends PureComponent {
                 </Accordion>
             </ListGroup>
         </PMColumn>
-        //  <Container >
-        //     <ListGroup variant="flush">
-        //        <Accordion activeKey={ activeKey }>
-        //           {/* Accounts */}
-        //           <Accounts 
-        //              accounts={ this.props.accounts } 
-        //              click={ this.props.onAccountClick } 
-        //              active={ this.props.activeAccount }
-        //              isOpen={ activeKey === 'accounts' }
-        //              openHandler={ type => this.openHandler(type) }
-        //              searchValue={ this.state.searchValue }
-        //              searchHandler={ event => this.manageSearchHandler(event) }
-        //              isLoading={ this.props.isAccountLoading }
-        //           />
-        //           {/* { reportTypeMarkup } */}
-        //           { filterMarkup }
-        //           { subFilterMarkup }
-        //           {/* Listing Templates */}
-        //           <Templates
-        //              templates={ this.props.templates } 
-        //              click={ this.props.onTemplateClick }
-        //              active={ this.props.activeTemplate }
-        //              isOpen={ activeKey === 'templates' }
-        //              openHandler={ type => this.openHandler(type) }
-        //           />               
-        //        </Accordion>
-        //     </ListGroup>
-        //  </Container>
       );
    }
 }
